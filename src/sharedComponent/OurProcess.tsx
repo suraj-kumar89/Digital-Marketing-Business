@@ -74,7 +74,20 @@ export default function OurProcessSection() {
 
 
       {/* ⭐ RIGHT SIDE — CONTENT */}
-      <div className="w-[26rem] shrink-0 flex flex-col gap-6">
+     <div
+  className="
+    w-[26rem]
+    shrink-0
+    flex
+    flex-col
+    gap-6
+    sticky
+    top-[6rem]
+    self-start
+    h-fit
+  "
+>
+
         {/* HEADING */}
         <h2
           className="

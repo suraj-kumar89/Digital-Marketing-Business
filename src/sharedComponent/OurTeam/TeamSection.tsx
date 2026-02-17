@@ -77,7 +77,7 @@ useEffect(() => {
           name="Shitanshu Kumar"
           role="Founder · Performance Marketing Lead"
           description="Owns overall strategy, paid acquisition decisions, and performance direction. Involved from planning through execution to ensure outcomes stay aligned with business goals."
-          logos={['/logo/logo22.png','/logo/logo7.png','/logo/logo10.png','/logo/logo18.png','/logo/logo19.png', '/logo/logo20.png', '/logo/logo21.png']}
+          logos={['/logo/logo18.svg','/logo/logo19.svg','/logo/logo20.svg','/logo/logo21.svg', '/logo/logo22.svg', '/logo/logo23.svg']}
         />
 
         <TeamCard
@@ -86,7 +86,7 @@ useEffect(() => {
           name="Shikhar Chawla"
           role="Landing Pages & Conversion"
           description="Focuses on landing page structure, messaging clarity, and conversion flow to ensure traffic turns into meaningful results."
-          logos={['/logo/logo23.png','/logo/logo24.png','/logo/logo25.png','/logo/logo30.png','/logo/logo7.png']}
+          logos={['/logo/logo24.svg','/logo/logo25.svg','/logo/logo26.svg','/logo/logo27.svg','/logo/logo28.svg']}
         />
 
         <TeamCard
@@ -95,7 +95,7 @@ useEffect(() => {
           name="Pritesh Mishra"
           role="Sr. SEO Manager"
           description="Focuses on landing page structure, messaging clarity, and conversion flow to ensure traffic turns into meaningful results."
-          logos={['/logo/logo26.png','/logo/logo27.png','/logo/logo28.png','/logo/logo29.png']}
+          logos={['/logo/logo29.svg','/logo/logo30.svg','/logo/logo31.svg','/logo/logo32.svg']}
         />
 
       </div>

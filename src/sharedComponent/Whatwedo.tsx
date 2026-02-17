@@ -17,9 +17,9 @@ const SERVICES = [
     type: 'images',
     label: 'Platforms worked on:',
     platforms: [
-      '/whatwedo/img1.png',
-      '/whatwedo/img2.png',
-      '/whatwedo/img3.png',
+      '/whatwedo/img1.svg',
+      '/whatwedo/img2.svg',
+      '/whatwedo/img3.svg',
     ],
   },
 
@@ -61,17 +61,22 @@ export default function WhatWeDoSection() {
       "
     >
       {/* LEFT INTRO CARD */}
-      <div
-        className="
-          flex
-          flex-col
-          gap-[2rem]
-          flex-1
-          p-[2.5rem]
-          rounded-[1.5rem]
-          bg-[#050914]
-        "
-      >
+     <div
+  className="
+    flex
+    flex-col
+    gap-[2rem]
+    flex-1
+    p-[2.5rem]
+    rounded-[1.5rem]
+    bg-[#050914]
+    sticky
+    top-[6rem]
+    h-fit
+    self-start
+  "
+>
+
         <h2 className="text-white text-[3rem] leading-[4rem] font-medium">
           What <span className="text-[#F90]">We Do</span>
         </h2>

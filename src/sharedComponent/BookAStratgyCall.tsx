@@ -10,96 +10,74 @@ export default function BookAStartegy() {
   const buttonLabel = "Partner for Growth"
 
   return (
-    /* NEW OUTER LAYOUT */
-    <section
-      className="
-        flex
-        flex-col
-        justify-end
-        items-start
-        w-[90rem]
-        bg-[#02050E]
-      "
-    >
-      {/* EXISTING OUTER SECTION */}
-      <div
-        className="
-          flex
-          flex-col
-          items-start
-          gap-[0.625rem]
-          w-full
-          px-[4rem]
-          py-[4rem]
-        "
-      >
+    <section className="w-full bg-[#02050E] px-4 sm:px-6 lg:px-8 py-12">
+
+      {/* CENTER CONTAINER */}
+      <div className="max-w-7xl mx-auto">
+
         {/* COMPONENT WRAPPER */}
         <div
           className="
-            flex
-            flex-col
-            items-start
-            gap-[2rem]
-            w-full
-            px-[7.5rem]
-            py-[5rem]
-            rounded-[1.25rem]
+            relative
+            flex flex-col
+            gap-8
+            rounded-2xl
             bg-[#0F172A66]
             backdrop-blur-md
             overflow-hidden
-            relative
+            px-6 sm:px-10 lg:px-20
+            py-12 sm:py-16
           "
         >
-          {/* DESKTOP */}
-          <div className="hidden lg:flex w-full flex-col items-center gap-9 relative">
-            {/* ORANGE GLOWS */}
-            <div className="absolute top-[-150px] right-[-100px] w-[355px] h-[355px] bg-[#FF9900] rounded-full opacity-30 blur-[315px] pointer-events-none z-0" />
-            <div className="absolute bottom-[-150px] left-[-150px] w-[355px] h-[355px] bg-[#FF9900] rounded-full opacity-30 blur-[315px] pointer-events-none z-0" />
+          {/* ORANGE GLOWS */}
+          <div className="absolute top-[-100px] right-[-80px] w-[220px] h-[220px] sm:w-[350px] sm:h-[350px] bg-[#FF9900] rounded-full opacity-30 blur-[200px] pointer-events-none" />
+          <div className="absolute bottom-[-100px] left-[-80px] w-[220px] h-[220px] sm:w-[350px] sm:h-[350px] bg-[#FF9900] rounded-full opacity-30 blur-[200px] pointer-events-none" />
+
+          {/* DESKTOP LAYOUT */}
+          <div className="hidden lg:flex flex-col items-center gap-10 text-center">
 
             {/* TOP ROW */}
-            <div className="relative z-10 flex justify-center items-center gap-6">
-              <h2 className="text-white text-5xl font-semibold">
+            <div className="flex flex-wrap justify-center items-center gap-6">
+              <h2 className="text-white text-3xl md:text-4xl lg:text-5xl font-semibold">
                 {headingPart1}
               </h2>
 
-              <p className="text-[#94A3B8] text-[13px] font-normal leading-[21px] max-w-[480px]">
+              <p className="text-[#94A3B8] text-sm md:text-base max-w-lg">
                 {subtext}
               </p>
             </div>
 
             {/* BOTTOM ROW */}
-            <div className="relative z-10 flex justify-center items-center gap-6">
+            <div className="flex flex-wrap justify-center items-center gap-6">
               <Link href="/book-a-call">
-                <button className="bg-[#FF9900] transition-all px-4 py-2 text-sm font-semibold text-black rounded-md">
+                <button className="bg-[#FF9900] hover:opacity-90 transition px-6 py-3 text-sm md:text-base font-semibold text-black rounded-md">
                   {buttonLabel}
                 </button>
               </Link>
 
-              <h2 className="text-white text-5xl font-bold">
+              <h2 className="text-white text-3xl md:text-4xl lg:text-5xl font-bold">
                 {headingPart2}
               </h2>
             </div>
           </div>
 
-          {/* MOBILE */}
-          <div className="block lg:hidden w-full flex flex-col items-center gap-6 text-center relative">
-            <div className="absolute top-[-150px] right-[-100px] w-[355px] h-[355px] bg-[#FF9900] rounded-full opacity-30 blur-[315px] pointer-events-none z-0" />
-            <div className="absolute bottom-[-150px] left-[-150px] w-[355px] h-[355px] bg-[#FF9900] rounded-full opacity-30 blur-[315px] pointer-events-none z-0" />
-
-            <h2 className="relative z-10 text-white text-[28px] font-semibold leading-[43px]">
+          {/* MOBILE + TABLET */}
+          <div className="lg:hidden flex flex-col items-center gap-6 text-center">
+            <h2 className="text-white text-2xl sm:text-3xl font-semibold">
               {headingPart1} {headingPart2}
             </h2>
 
-            <p className="relative z-10 text-[#94A3B8] text-[10px] font-normal leading-[16px]">
+            <p className="text-[#94A3B8] text-sm max-w-md">
               {subtext}
             </p>
 
             <Link href="/book-a-call">
-              <button className="relative z-10 bg-[#FF9900] px-6 py-3 text-sm sm:text-base font-semibold text-black rounded-md">
+              <button className="bg-[#FF9900] px-6 py-3 text-sm sm:text-base font-semibold text-black rounded-md">
                 {buttonLabel}
               </button>
             </Link>
           </div>
+
         </div>
       </div>
     </section>

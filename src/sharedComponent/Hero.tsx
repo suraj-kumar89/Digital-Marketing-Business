@@ -139,7 +139,7 @@ export default function HeroSection() {
         <div className="flex items-center gap-6 mt-[-1rem]">
           {/* GOOGLE PARTNER */}
           <img
-            src="/partner1.png"
+            src="/partner1.svg"
             alt="Google Partner"
             className="w-[152px] h-[59px] object-contain"
           />
@@ -154,7 +154,7 @@ export default function HeroSection() {
     "
           >
             <img
-              src="/partner2.png"
+              src="/partner2.svg"
               alt="Meta Business Partner"
               className="object-contain"
             />
@@ -179,7 +179,7 @@ export default function HeroSection() {
                    border-white/25
                    bg-[#050914]
                  "
-                   >
+      >
         {/* HEADING */}
         <h3 className="self-start text-white text-[24px] leading-[36px] font-medium font-[var(--font-jakarta)]">
           Book a Strategy Call

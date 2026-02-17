@@ -23,7 +23,7 @@ export default function TeamCard({
 }: TeamCardProps) {
 
 
-    const [isOpen, setIsOpen] = useState(active)
+    const [isOpen, setIsOpen] = useState(false)
 
   const isActive = isOpen
   return (
@@ -59,22 +59,13 @@ export default function TeamCard({
 
           {/* ================= ICON (BOTTOM RIGHT OF IMAGE) ================= */}
 
-          <button
-            onClick={onIconClick}
-            className="
-              absolute bottom-4 right-4
-              flex items-center justify-center
-              p-[0.5rem]
-              rounded-[24rem]
-              bg-[#00C0E8]
-              shadow-[0_17px_58.2px_-4px_rgba(0,130,251,0.22)]
-              transition duration-300
-              hover:scale-110 active:scale-95
-              z-10
-            "
-          >
+         <button
+  onClick={() => setIsOpen(prev => !prev)}
+  className="absolute bottom-4 right-4 flex items-center justify-center p-[0.5rem] rounded-[24rem] bg-[#00C0E8] shadow-[0_17px_58.2px_-4px_rgba(0,130,251,0.22)] transition duration-300 hover:scale-110 active:scale-95 z-10"
+>
+
             {/* PLUS (default) */}
-            {!active && (
+            {!isActive && (
               <svg viewBox="0 0 24 24" className="w-[1.5rem] h-[1.5rem]">
                 <path
                   d="M21 13.2857H13.2857V21H10.7143V13.2857H3V10.7143H10.7143V3H13.2857V10.7143H21V13.2857Z"
@@ -84,7 +75,7 @@ export default function TeamCard({
             )}
 
             {/* MINUS (active) */}
-            {active && (
+            {isActive && (
               <svg viewBox="0 0 24 24" className="w-[1.5rem] h-[1.5rem]">
                 <path d="M21 13.2853H3V10.7139H21V13.2853Z" fill="#02050E" />
               </svg>
@@ -94,7 +85,7 @@ export default function TeamCard({
         </div>
 
         {/* overlay name (default state) */}
-        {!active && (
+        {!isActive && (
           <div className="absolute bottom-4 left-4 right-16">
             <h3 className="text-white text-[1.5rem] leading-[2.25rem] font-medium">
               {name}

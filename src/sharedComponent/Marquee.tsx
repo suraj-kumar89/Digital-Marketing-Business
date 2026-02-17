@@ -3,23 +3,22 @@
 import Image from 'next/image'
 
 const logos = [
-  '/logo/logo1.png',
-  '/logo/logo2.png',
-  '/logo/logo3.png',
-  '/logo/logo4.png',
+  '/logo/logo1.svg',
+  '/logo/logo2.svg',
+  '/logo/logo3.svg',
+  '/logo/logo4.svg',
   '/logo/logo5.svg',
-  '/logo/logo6.png',
-  '/logo/logo7.png',
-  '/logo/logo8.png',
-  '/logo/logo9.png',
-  '/logo/logo10.png',
-  '/logo/logo11.png',
-  '/logo/logo12.png',
-  '/logo/logo13.png',
-  '/logo/logo14.png',
-  '/logo/logo15.png',
-  '/logo/logo16.png',
-  '/logo/logo17.png',
+  '/logo/logo6.svg',
+  '/logo/logo7.svg',
+  '/logo/logo8.svg',
+  '/logo/logo9.svg',
+  '/logo/logo10.svg',
+  '/logo/logo11.svg',
+  '/logo/logo12.svg',
+  '/logo/logo13.svg',
+  '/logo/logo14.svg',
+  '/logo/logo15.svg',
+  '/logo/logo16.svg',
 
 
 ]

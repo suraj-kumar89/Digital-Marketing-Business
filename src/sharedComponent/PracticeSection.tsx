@@ -85,7 +85,7 @@ export default function PracticeSection() {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex(prev => prev + 1)
-    }, 4000)
+    }, 7000)
 
     return () => clearInterval(interval)
   }, [])
@@ -116,7 +116,7 @@ export default function PracticeSection() {
       <PracticeCard data={activeData} />
 
       {/* AVATAR CAROUSEL */}
-      <AvatarCarousel items={TESTIMONIALS} index={index} animate/>
+      <AvatarCarousel items={TESTIMONIALS} index={index}  setIndex={setIndex} animate/>
 
     </section>
   )
@@ -177,10 +177,12 @@ function PracticeCard({ data }: { data: Testimonial }) {
 function AvatarCarousel({
   items,
   index,
+   setIndex,
   animate,
 }: {
   items: Testimonial[]
   index: number
+   setIndex: React.Dispatch<React.SetStateAction<number>>
   animate: boolean
 }) {
   /* exact avatar width + gap */
@@ -201,7 +203,7 @@ function AvatarCarousel({
 
       <div
         className={`flex gap-4 ${
-          animate ? 'transition-transform duration-700 ease-out' : ''
+          animate ? 'transition-transform duration-[1200ms] ease-out' : ''
         }`}
         style={{
           transform: `translateX(${translateX}px)`,
@@ -212,13 +214,18 @@ function AvatarCarousel({
           const active = realIndex === index % items.length
 
           return (
-            <Avatar
-              key={i}
-              name={item.name}
-              role={item.role}
-              image={item.image}
-              active={active}
-            />
+             <div
+    key={i}
+    onClick={() => setIndex(realIndex + items.length)} 
+    className="cursor-pointer"
+  >
+    <Avatar
+      name={item.name}
+      role={item.role}
+      image={item.image}
+      active={active}
+    />
+  </div>
           )
         })}
       </div>

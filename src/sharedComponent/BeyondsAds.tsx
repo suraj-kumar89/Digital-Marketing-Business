@@ -5,33 +5,44 @@ export default function BeyondAdsSection() {
     <section
       className="
         flex
+        flex-col
+        lg:flex-row
         justify-center
-        items-start
-        gap-[4rem]
-        px-[7.5rem]
-        py-[5rem]
+        items-center
+        lg:items-start
+        gap-12
+        lg:gap-[4rem]
+        px-6
+        md:px-12
+        lg:px-[7.5rem]
+        py-12
+        lg:py-[5rem]
         bg-[#02050E]
       "
     >
       {/* LEFT CONTENT */}
-      <div className="flex flex-col items-start gap-6 w-[36.625rem]">
+      <div className="flex flex-col items-start gap-6 w-full lg:w-[36.625rem]">
 
         {/* HEADING */}
         <h2
           className="
-            w-[36.625rem]
-            text-[3rem]
-            leading-[4rem]
+            w-full
+            text-[2.25rem]
+            md:text-[2.75rem]
+            lg:text-[3rem]
+            leading-[2.75rem]
+            md:leading-[3.5rem]
+            lg:leading-[4rem]
             font-medium
             font-[var(--font-jakarta)]
             text-white
           "
         >
           <span className="text-[#F90]">Beyond Ads:</span> We Take
-          <br />
-          Responsibility for
-          <br />
-          Performance
+          <br className="hidden md:block" />
+          {" "}Responsibility for
+          <br className="hidden md:block" />
+          {" "}Performance
         </h2>
 
         {/* PARAGRAPHS */}
@@ -43,6 +54,7 @@ export default function BeyondAdsSection() {
             leading-[1.5rem]
             font-normal
             font-[var(--font-jakarta)]
+            max-w-[40rem]
           "
         >
           <p>
@@ -70,11 +82,14 @@ export default function BeyondAdsSection() {
             rounded-[0.75rem]
             bg-[#F90]
             text-[#331F00]
-            text-[1.25rem]
+            text-[1.125rem]
+            md:text-[1.25rem]
             leading-[2rem]
             font-bold
             tracking-[-0.0125rem]
             font-[var(--font-jakarta)]
+            w-full
+            md:w-auto
           "
         >
           Book a Strategy Call
@@ -88,10 +103,15 @@ export default function BeyondAdsSection() {
           flex-col
           items-start
           gap-[1.5rem]
-          flex-1
-          px-[4rem]
-          py-[2.5rem]
-          rounded-[2rem]
+          w-full
+          lg:flex-1
+          px-6
+          md:px-[3rem]
+          lg:px-[4rem]
+          py-8
+          md:py-[2.5rem]
+          rounded-[1.5rem]
+          lg:rounded-[2rem]
           border-[0.5px]
           border-white/25
           bg-[#050914]
@@ -101,9 +121,11 @@ export default function BeyondAdsSection() {
         <h3
           className="
             text-[#F90]
-            text-[1.5rem]
-            leading-[2.25rem]
-            font-medium
+            text-[1.25rem]
+            md:text-[1.5rem]
+            leading-[1.75rem]
+            md:leading-[2.25rem]
+            font-semibold
             font-[var(--font-jakarta)]
           "
         >
@@ -111,7 +133,7 @@ export default function BeyondAdsSection() {
         </h3>
 
         {/* PRINCIPLES */}
-        <div className="flex flex-col gap-6 w-full">
+        <div className="flex flex-col gap-8 lg:gap-6 w-full">
 
           <Principle
             icon={
@@ -152,7 +174,7 @@ export default function BeyondAdsSection() {
                 <path d="M3.5 3.5V22.1667C3.5 22.7855 3.74583 23.379 4.18342 23.8166C4.621 24.2542 5.21449 24.5 5.83333 24.5H24.5M8.16667 13.0748C8.1667 12.9204 8.22795 12.7723 8.337 12.663L10.6703 10.3297C10.7245 10.2753 10.7889 10.2322 10.8598 10.2028C10.9306 10.1734 11.0066 10.1583 11.0833 10.1583C11.1601 10.1583 11.236 10.1734 11.3069 10.2028C11.3778 10.2322 11.4421 10.2753 11.4963 10.3297L15.337 14.1703C15.3912 14.2247 15.4556 14.2678 15.5264 14.2972C15.5973 14.3266 15.6733 14.3417 15.75 14.3417C15.8267 14.3417 15.9027 14.3266 15.9736 14.2972C16.0444 14.2678 16.1088 14.2247 16.163 14.1703L21.1703 9.163C21.2518 9.08128 21.3558 9.02558 21.469 9.00295C21.5821 8.98032 21.6995 8.99177 21.8062 9.03586C21.9128 9.07996 22.004 9.1547 22.0682 9.25064C22.1324 9.34659 22.1666 9.45941 22.1667 9.57483V18.6667C22.1667 18.9761 22.0438 19.2728 21.825 19.4916C21.6062 19.7104 21.3094 19.8333 21 19.8333H9.33333C9.02391 19.8333 8.72717 19.7104 8.50838 19.4916C8.28958 19.2728 8.16667 18.9761 8.16667 18.6667V13.0748Z" stroke="#7996EC" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             }
-            title="Conversion and experience ownership"
+            title="Measurement as foundation"
             description="Decisions are only as good as the data behind them. Tracking, attribution, and measurement are treated as foundations, not afterthoughts."
           />
 
@@ -163,7 +185,7 @@ export default function BeyondAdsSection() {
                 <path d="M11.6667 9.33333H16.3333M14 24.5V14M14 9.33333V3.5M19.8333 18.6667H24.5M22.1667 14V3.5M22.1667 24.5V18.6667M3.5 16.3333H8.16667M5.83333 11.6667V3.5M5.83333 24.5V16.3333" stroke="#7996EC" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             }
-            title="Conversion and experience ownership"
+            title="Judgment-based scaling"
             description="Not every dip needs panic and not every spike deserves scale. Knowing when to push, pause, or rethink is part of the responsibility"
           />
 
@@ -187,16 +209,18 @@ function Principle({
     <div className="flex flex-col gap-2 self-stretch">
 
       {/* ICON + TITLE */}
-      <div className="flex items-center gap-3">
-        <span className="w-[1.75rem] h-[1.75rem] shrink-0">
+      <div className="flex items-start md:items-center gap-3">
+        <span className="w-[1.5rem] h-[1.5rem] md:w-[1.75rem] md:h-[1.75rem] shrink-0 mt-1 md:mt-0">
           {icon}
         </span>
 
         <h4
           className="
             text-white
-            text-[1.25rem]
-            leading-[1.75rem]
+            text-[1.125rem]
+            md:text-[1.25rem]
+            leading-[1.5rem]
+            md:leading-[1.75rem]
             font-medium
             font-[var(--font-jakarta)]
           "
@@ -209,8 +233,10 @@ function Principle({
       <p
         className="
           text-[#C2CAD6]
-          text-[1rem]
-          leading-[1.5rem]
+          text-[0.9375rem]
+          md:text-[1rem]
+          leading-[1.4rem]
+          md:leading-[1.5rem]
           font-normal
           font-[var(--font-jakarta)]
         "
@@ -221,4 +247,3 @@ function Principle({
     </div>
   )
 }
-

@@ -19,8 +19,6 @@ const logos = [
   '/logo/logo14.svg',
   '/logo/logo15.svg',
   '/logo/logo16.svg',
-
-
 ]
 
 export default function LogoMarqueeSection() {
@@ -28,47 +26,62 @@ export default function LogoMarqueeSection() {
     <section
       className="
         flex
+        flex-col
+        lg:flex-row
         items-center
-        px-[7.5rem]
-        py-[4rem]
+        lg:items-center
+        gap-10
+        lg:gap-0
+        px-6
+        md:px-12
+        lg:px-[7.5rem]
+        py-12
+        lg:py-[4rem]
         bg-[#050914]
+        overflow-hidden
       "
     >
       {/* LEFT TEXT */}
-    <div className="shrink-0 bg-transparent">
-  <h4
-    className="
-      text-white
-      text-[2rem]
-      font-medium
-      font-[var(--font-jakarta)]
-    "
-  >
-    Trusted by Teams at <br /> Leading Brands
-  </h4>
-</div>
-
+      <div className="shrink-0 w-full lg:w-[23.8125rem] bg-transparent text-center lg:text-left">
+        <h4
+          className="
+            text-white
+            text-[1.5rem]
+            md:text-[1.75rem]
+            lg:text-[2rem]
+            leading-[2.25rem]
+            md:leading-[2.5rem]
+            lg:leading-[2.75rem]
+            font-medium
+            font-[var(--font-jakarta)]
+          "
+        >
+          Trusted by Teams at <br className="hidden lg:block" /> Leading Brands
+        </h4>
+      </div>
 
       {/* RIGHT MARQUEE WRAPPER */}
-      <div className="relative flex-1 overflow-hidden">
-
-        {/* LEFT GRADIENT OVERLAY */}
+      <div className="relative w-full flex-1 overflow-hidden">
+        
+        {/* LEFT GRADIENT OVERLAY (Hidden on mobile/tablet to show more logos) */}
         <div
           className="
             absolute
-            left-[-18rem]
+            left-0
             bottom-[-0.03125rem]
-            w-[21.1875rem]
+            hidden
+            lg:block
+            lg:w-[15rem]
+            xl:w-[21.1875rem]
             h-[4.1875rem]
             pointer-events-none
-            z-10
-            bg-[linear-gradient(270deg,#050914_1%,rgba(5,9,20,0)_100%)]
+            z-[1]
+            bg-[linear-gradient(90deg,#050914_11.06%,rgba(5,9,20,0)_100%)]
           "
         />
 
         {/* MARQUEE TRACK */}
-        <div className="marquee-track flex items-center gap-16">
-
+        <div className="marquee-track flex items-center gap-12 md:gap-16">
           {/* FIRST SET */}
           {logos.map((logo, i) => (
             <div key={`logo-1-${i}`} className="flex-shrink-0">
@@ -78,8 +91,9 @@ export default function LogoMarqueeSection() {
                 width={125}
                 height={58}
                 className="
-                  w-[7.8125rem]
-                  h-[3.625rem]
+                  w-[6rem]
+                  md:w-[7.8125rem]
+                  h-auto
                   object-contain
                   opacity-80
                 "
@@ -96,15 +110,15 @@ export default function LogoMarqueeSection() {
                 width={125}
                 height={58}
                 className="
-                  w-[7.8125rem]
-                  h-[3.625rem]
+                  w-[6rem]
+                  md:w-[7.8125rem]
+                  h-auto
                   object-contain
                   opacity-80
                 "
               />
             </div>
           ))}
-
         </div>
       </div>
     </section>

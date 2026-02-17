@@ -13,16 +13,21 @@ export default function Header() {
         items-center
         justify-between
         h-[5rem]
-        px-[7.5rem]
+        /* Responsive padding: 1.5rem on mobile, 3rem on tablet, 7.5rem on desktop */
+        px-6
+        md:px-12
+        lg:px-[7.5rem]
         bg-[#0A0F1D]
+        w-full
       "
     >
       {/* LOGO */}
-      <Link href="/" className="flex items-center">
+      <Link href="/" className="flex items-center shrink-0">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 185 20"
-          className="w-[11.5625rem] h-[1.25rem]"
+          /* Responsive width: slightly smaller on mobile to ensure it fits */
+          className="w-[9rem] md:w-[11.5625rem] h-auto"
         >
           <path d="M180.758 19.6249V13.4442H181.622V18.9176H185V19.6249H180.758Z" fill="white"/>
           <path d="M178.53 19.6249L178.043 18.2872H175.302L174.815 19.6249H173.951L176.237 13.4442H177.101L179.394 19.6249H178.53ZM175.561 17.58H177.784L176.677 14.5358L175.561 17.58Z" fill="white"/>
@@ -45,19 +50,24 @@ export default function Header() {
       </Link>
 
       {/* CTA BUTTON */}
-      <Link href="/book-a-call">
+      <Link href="/book-a-call" className="shrink-0">
         <button
           className="
             flex
             items-center
             justify-center
             gap-[10px]
-            px-6
-            py-3
+            /* Smaller padding on mobile to keep button compact */
+            px-4
+            md:px-6
+            py-2.5
+            md:py-3
             rounded-lg
             bg-[#FF9900]
             text-[#331F00]
-            text-[1rem]
+            /* Font size stays 1rem but becomes 0.875rem on very small screens if needed */
+            text-[0.875rem]
+            md:text-[1rem]
             font-bold
             leading-[1.5rem]
             tracking-[-0.01rem]

@@ -5,10 +5,16 @@ export default function ELearningCaseStudySection() {
     <section
       className="
         flex
+        flex-col
+        lg:flex-row
         items-start
-        gap-[4rem]
-        px-[7.5rem]
-        py-[5rem]
+        gap-12
+        lg:gap-[4rem]
+        px-6
+        md:px-12
+        lg:px-[7.5rem]
+        py-12
+        lg:py-[5rem]
         self-stretch
         bg-[#050914]
       "
@@ -17,11 +23,13 @@ export default function ELearningCaseStudySection() {
       <div
         className="
           flex
-          w-[30.4375rem]
           flex-col
           justify-center
           items-start
-          gap-[2.5rem]
+          gap-[1.5rem]
+          lg:gap-[2.5rem]
+          w-full
+          lg:w-[30.4375rem]
         "
       >
         {/* CASE STUDY LABEL */}
@@ -41,15 +49,19 @@ export default function ELearningCaseStudySection() {
         {/* HEADING */}
         <h2
           className="
-            text-[3rem]
-            leading-[4rem]
+            text-[2.25rem]
+            md:text-[2.75rem]
+            lg:text-[3rem]
+            leading-[2.75rem]
+            md:leading-[3.5rem]
+            lg:leading-[4rem]
             font-medium
             font-[var(--Type-Font-Family-Headings)]
           "
         >
           <span className="text-[#F90]">E-learning Elevated:</span>
-          <br />
-          <span className="text-white">Clicks to Profit</span>
+          <br className="hidden md:block" />
+          <span className="text-white"> Clicks to Profit</span>
         </h2>
 
         {/* PROBLEM */}
@@ -87,16 +99,20 @@ export default function ELearningCaseStudySection() {
             justify-center
             items-center
             gap-[0.75rem]
-            px-[2rem]
+            px-[1.5rem]
+            md:px-[2rem]
             py-[0.75rem]
             rounded-[0.5rem]
             bg-[#F90]
             text-[#331F00]
-            text-[1.25rem]
+            text-[1.125rem]
+            md:text-[1.25rem]
             leading-[2rem]
             font-bold
             tracking-[-0.0125rem]
             font-[var(--Type-Font-Family-UI)]
+            w-full
+            md:w-auto
           "
         >
           Begin Your Transformation
@@ -104,7 +120,7 @@ export default function ELearningCaseStudySection() {
       </div>
 
       {/* ================= RIGHT COLUMN ================= */}
-      <div className="flex flex-col gap-[2.5rem] w-full max-w-[40rem]">
+      <div className="flex flex-col gap-10 lg:gap-[2.5rem] w-full lg:max-w-[40rem]">
 
         {/* SOLUTION SNAPSHOTS */}
         <div className="flex flex-col gap-4">
@@ -138,7 +154,7 @@ export default function ELearningCaseStudySection() {
                   font-[var(--Type-Font-Family-Body)]
                 "
               >
-                <ArrowIcon />
+                <div className="mt-0.5"><ArrowIcon /></div>
                 {item}
               </li>
             ))}
@@ -148,11 +164,11 @@ export default function ELearningCaseStudySection() {
         {/* METRICS GRID */}
         <div
           className="
-            inline-grid
-            row-gap-[1.25rem]
-            column-gap-[20px]
-            grid-rows-[repeat(2,fit-content(100%))]
-            grid-cols-2
+            grid
+            grid-cols-1
+            sm:grid-cols-2
+            gap-y-8
+            gap-x-5
             self-stretch
           "
         >
@@ -170,12 +186,14 @@ export default function ELearningCaseStudySection() {
 
 function Metric({ value, label }: { value: string; label: string }) {
   return (
-    <div className="flex flex-col gap-1">
+    <div className="flex flex-col gap-1 border-l border-white/5 pl-4 sm:border-0 sm:pl-0">
       <span
         className="
           text-white
-          text-[2.5rem]
-          leading-[3.25rem]
+          text-[2.25rem]
+          md:text-[2.5rem]
+          leading-[2.75rem]
+          md:leading-[3.25rem]
           font-normal
           font-[var(--Type-Font-Family-Headings)]
         "
@@ -185,9 +203,11 @@ function Metric({ value, label }: { value: string; label: string }) {
 
       <span
         className="
-          text-white
-          text-[1.25rem]
-          leading-[2rem]
+          text-[#C2CAD6]
+          text-[1rem]
+          md:text-[1.25rem]
+          leading-[1.5rem]
+          md:leading-[2rem]
           font-normal
           font-[var(--Type-Font-Family-Body)]
         "

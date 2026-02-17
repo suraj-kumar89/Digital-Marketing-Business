@@ -1,69 +1,46 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Fluid Typography - Scales between 320px and 1280px */
+  --font-jakarta: "Plus Jakarta Sans", sans-serif;
+  
+  /* H1 will be 2.5rem on mobile and 4rem on desktop */
+  --Font-Size-Headings-h1: clamp(2.5rem, 8vw, 4rem);
+  --Line-Height-Headings-h1: 1.2;
 
-  /* DESIGN SYSTEM TOKENS */
-  --Color-Text-Heading-White: #fff;
-
-  /* connect design system → next/font */
-  --Type-Font-Family-Headings: var(--font-jakarta);
-
-  --Font-Size-Headings-h1: 4rem;
-  --Line-Height-Headings-h1: 5rem;
+  /* Global Section Spacing */
+  --Section-Padding-Y: clamp(3rem, 10vh, 5rem);
+  --Section-Padding-X: clamp(1.5rem, 5vw, 7.5rem);
 }
 
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 body {
-  background: var(--background);
-  color: var(--foreground);
-
-  /* GLOBAL DEFAULT FONT */
-  font-family: var(--Type-Font-Family-Headings);
-}
-/* smooth infinite marquee */
-
-
-/* smooth infinite marquee */
-
-@keyframes marquee-left-to-right {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
+  font-family: var(--font-jakarta);
+  /* Prevents horizontal scroll on small devices */
+min-height: 100vh;
+  width: 100%;
 }
 
-/* smooth infinite marquee */
-
-@keyframes marquee-left-to-right {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
+/* Apply fluid H1 globally if needed */
+h1 {
+  font-size: var(--Font-Size-Headings-h1);
+  line-height: var(--Line-Height-Headings-h1);
 }
 
+/* Marquee Responsiveness */
 .marquee-track {
   display: flex;
   width: max-content;
   animation: marquee-left-to-right 30s linear infinite;
+}
+
+@keyframes marquee-left-to-right {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Mobile speed adjustment */
+@media (max-width: 768px) {
+  .marquee-track {
+    animation-duration: 20s;
+  }
 }

@@ -10,29 +10,40 @@ export default function GrowthDecisionsSection() {
           justify-center
           items-start
           gap-[2.5rem]
-          w-[90rem]
-          px-[7.5rem]
-          py-[5rem]
+          /* Responsive widths and padding */
+          w-full
+          max-w-[90rem]
+          px-6
+          md:px-12
+          lg:px-[7.5rem]
+          py-12
+          lg:py-[5rem]
         "
       >
         {/* SECTION HEADING */}
         <h2
           className="
-            w-[36.625rem]
+            /* Heading scales down for mobile */
+            w-full
+            lg:w-[36.625rem]
             text-white
-            text-[3rem]
-            leading-[4rem]
-            font-medium
+            text-[2rem]
+            md:text-[2.5rem]
+            lg:text-[3rem]
+            leading-[2.75rem]
+            md:leading-[3.25rem]
+            lg:leading-[4rem]
+            font-semibold
             font-[var(--font-jakarta)]
           "
         >
           How <span className="text-[#F90]">Growth Decisions</span>
-          <br />
-          Are Actually Made
+          <br className="hidden md:block" />
+          {" "}Are Actually Made
         </h2>
 
-        {/* PRINCIPLES */}
-        <div className="flex gap-6 w-full">
+        {/* PRINCIPLES GRID */}
+        <div className="flex flex-col lg:flex-row gap-6 w-full">
           <PrincipleCard
             label="Principle 1"
             title="Growth Starts with Economics, Not Channels"
@@ -84,11 +95,14 @@ function PrincipleCard({
         flex
         flex-col
         items-start
-        gap-[2.5rem]
+        gap-6
+        lg:gap-[2.5rem]
         flex-1
         self-stretch
-        p-[2rem]
-        rounded-[2.5rem]
+        p-6
+        md:p-[2rem]
+        rounded-[1.5rem]
+        lg:rounded-[2.5rem]
         bg-[#0A0F1D]
       "
     >
@@ -117,8 +131,10 @@ function PrincipleCard({
         className="
           self-stretch
           text-white
-          text-[1.5rem]
-          leading-[2.25rem]
+          text-[1.25rem]
+          lg:text-[1.5rem]
+          leading-[1.75rem]
+          lg:leading-[2.25rem]
           font-medium
           font-[var(--font-jakarta)]
         "

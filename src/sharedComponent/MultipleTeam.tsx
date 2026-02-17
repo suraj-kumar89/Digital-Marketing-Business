@@ -7,9 +7,13 @@ export default function MultipleTeamsSection() {
         flex
         flex-col
         items-center
-        gap-[4rem]
-        px-[7.5rem]
-        py-[5rem]
+        gap-12
+        lg:gap-[4rem]
+        px-6
+        md:px-12
+        lg:px-[7.5rem]
+        py-12
+        lg:py-[5rem]
         bg-[#050914]
         self-stretch
       "
@@ -21,15 +25,19 @@ export default function MultipleTeamsSection() {
         <h2
           className="
             text-white
-            text-[3rem]
-            leading-[4rem]
+            text-[2.25rem]
+            md:text-[2.75rem]
+            lg:text-[3rem]
+            leading-[2.75rem]
+            md:leading-[3.5rem]
+            lg:leading-[4rem]
             font-medium
             font-[var(--font-jakarta)]
           "
         >
           Multiple Teams vs One
-          <br />
-          Accountable Growth Partner
+          <br className="hidden md:block" />
+          {" "}Accountable Growth Partner
         </h2>
 
         {/* PARAGRAPH */}
@@ -47,8 +55,8 @@ export default function MultipleTeamsSection() {
         </p>
       </div>
 
-      {/* COMPARISON */}
-      <div className="grid grid-cols-2 gap-8 w-full max-w-[72rem]">
+      {/* COMPARISON GRID */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full max-w-[72rem]">
 
         {/* LEFT CARD */}
         <ComparisonCard
@@ -126,9 +134,13 @@ function ComparisonCard({
         flex
         flex-col
         items-center
-        gap-[2.5rem]
-        px-[5rem]
-        py-[2.5rem]
+        gap-8
+        lg:gap-[2.5rem]
+        px-6
+        md:px-12
+        lg:px-[5rem]
+        py-8
+        lg:py-[2.5rem]
         flex-1
         rounded-[1.5rem]
         border
@@ -160,8 +172,10 @@ function ComparisonCard({
       <h3
         className={`
           text-center
-          text-[1.5rem]
-          leading-[2.25rem]
+          text-[1.25rem]
+          md:text-[1.5rem]
+          leading-[1.75rem]
+          md:leading-[2.25rem]
           font-medium
           font-[var(--font-jakarta)]
           ${titleColor}
@@ -171,7 +185,7 @@ function ComparisonCard({
       </h3>
 
       {/* ITEMS */}
-      <div className="flex flex-col gap-4 w-full">
+      <div className="flex flex-col gap-6 lg:gap-4 w-full">
         {items.map((item, i) => (
           <div key={i} className="flex flex-col gap-1">
 
@@ -179,8 +193,10 @@ function ComparisonCard({
             <h4
               className="
                 text-white
-                text-[1.25rem]
-                leading-[1.75rem]
+                text-[1.125rem]
+                lg:text-[1.25rem]
+                leading-[1.5rem]
+                lg:leading-[1.75rem]
                 font-medium
                 font-[var(--font-jakarta)]
               "

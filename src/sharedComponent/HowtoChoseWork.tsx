@@ -6,72 +6,72 @@ export default function HowWeChooseSection() {
     <section
       className="
         flex
+        flex-col
+        lg:flex-row
         justify-between
         items-start
-        px-[7.5rem]
-        py-[5rem]
+        gap-16
+        lg:gap-0
+        px-6
+        md:px-12
+        lg:px-[7.5rem]
+        py-12
+        lg:py-[5rem]
         bg-[#02050E]
         self-stretch
       "
     >
       {/* LEFT CONTENT */}
-      <div className="flex flex-col gap-6 max-w-[28rem]">
+      <div className="flex flex-col w-full lg:w-[23.9375rem] items-start gap-[2rem]">
 
-        {/* HEADING */}
-        <h2
-          className="
-            text-white
-            text-[3rem]
-            leading-[4rem]
-            font-medium
-            font-[var(--font-jakarta)]
-          "
-        >
-          How We <span className="text-[#F90]">Choose</span>
-          <br />
-          <span className="text-[#F90]">to Work</span>
-        </h2>
+        {/* CONTENT STACK */}
+        <div className="flex flex-col items-start gap-[1.5rem] self-stretch">
 
-        {/* PARAGRAPH */}
-        <p
-          className="
-            text-[#C2CAD6]
-            text-[1rem]
-            leading-[1.5rem]
-            font-normal
-            font-[var(--font-jakarta)]
-          "
-        >
-          The way work is structured determines the quality of outcomes.
-          These are the standards followed across engagements.
-        </p>
+          {/* HEADING */}
+          <h2 className="text-white text-[2.5rem] md:text-[3rem] leading-[3.25rem] md:leading-[4rem] font-semibold font-[var(--font-jakarta)]">
+            How We <span className="text-[#F90]">Choose</span>
+            <br className="hidden md:block" />
+            <span className="text-[#F90]"> to Work</span>
+          </h2>
+
+          {/* PARAGRAPH */}
+          <p className="text-[#C2CAD6] text-[1rem] leading-[1.5rem] font-normal font-[var(--font-jakarta)] max-w-[30rem] lg:max-w-none">
+            The way work is structured determines the quality of outcomes.
+            These are the standards followed across engagements.
+          </p>
+
+        </div>
 
         {/* CTA BUTTON */}
         <button
           className="
-    flex
-    justify-center
-    items-center
-    gap-[0.5rem]
-    px-[2rem]
-    py-[0.75rem]
-    rounded-[0.75rem]
-    bg-[#F90]
-    text-[#331F00]
-    text-[1.25rem]
-    leading-[2rem]
-    font-bold
-    tracking-[-0.0125rem]
-    font-[var(--font-jakarta)]
-  "
+            flex
+            items-center
+            justify-center
+            gap-[0.625rem]
+            px-[1.5rem]
+            py-[1rem]
+            rounded-[0.75rem]
+            bg-[#F90]
+            text-[#331F00]
+            text-[1.125rem]
+            md:text-[1.25rem]
+            leading-[2rem]
+            font-bold
+            tracking-[-0.0125rem]
+            font-[var(--font-jakarta)]
+            w-full
+            md:w-auto
+          "
         >
           Get Started →
         </button>
 
       </div>
 
+
       {/* RIGHT GRID */}
-      <div className="grid grid-cols-2 gap-x-12 gap-y-10 max-w-[44rem]">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 w-full lg:max-w-[44rem]">
 
         <Principle
           icon={
@@ -168,7 +168,8 @@ function Principle({
         flex-col
         items-start
         gap-[1rem]
-        w-[21.25rem]
+        w-full
+        lg:w-[21.25rem]
         shrink-0
       "
     >
@@ -183,7 +184,7 @@ function Principle({
           text-white
           text-[1.25rem]
           leading-[1.75rem]
-          font-medium
+          font-semibold
           font-[var(--font-jakarta)]
         "
       >

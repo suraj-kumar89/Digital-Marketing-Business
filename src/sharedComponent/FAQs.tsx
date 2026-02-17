@@ -34,8 +34,10 @@ export default function FAQSection() {
     <section
       className="
         flex flex-col items-center
-        gap-[4rem]
-        px-[7.5rem] py-[5rem]
+        gap-[2.5rem] md:gap-[4rem]
+        /* Responsive padding */
+        px-6 md:px-12 lg:px-[7.5rem] 
+        py-12 md:py-[5rem]
         bg-[#02050E]
         self-stretch
       "
@@ -45,8 +47,9 @@ export default function FAQSection() {
       <h2
         className="
           text-white text-center
-          text-[3rem]
-          leading-[4rem]
+          /* Responsive font sizes */
+          text-[2.25rem] md:text-[2.75rem] lg:text-[3rem]
+          leading-[2.75rem] md:leading-[3.5rem] lg:leading-[4rem]
           font-medium
           font-[var(--Type-Font-Family-Headings)]
         "
@@ -56,7 +59,7 @@ export default function FAQSection() {
 
       {/* ================= FAQ LIST ================= */}
 
-      <div className="w-[48rem] flex flex-col gap-[1rem]">
+      <div className="w-full max-w-[48rem] flex flex-col gap-[1rem]">
         {FAQS.map((faq, index) => (
           <FAQItem
             key={index}
@@ -84,8 +87,9 @@ function FAQItem({
     <div
       className="
         flex flex-col
-        p-[2.5rem]
-        gap-[1.5rem]
+        /* Responsive internal padding */
+        p-6 md:p-[2.5rem]
+        gap-[1.25rem] md:gap-[1.5rem]
         rounded-[0.625rem]
         bg-[#0A0F1D]
         w-full
@@ -95,13 +99,13 @@ function FAQItem({
 
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex justify-between items-center text-left"
+        className="w-full flex justify-between items-center text-left gap-4"
       >
         <span
           className="
             text-white
-            text-[1.25rem]
-            leading-[1.75rem]
+            text-[1.125rem] md:text-[1.25rem]
+            leading-[1.5rem] md:leading-[1.75rem]
             font-medium
             font-[var(--Type-Font-Family-Headings)]
           "
@@ -110,7 +114,9 @@ function FAQItem({
         </span>
 
         {/* ARROW ICON */}
-        <ArrowIcon open={open} />
+        <div className="shrink-0">
+          <ArrowIcon open={open} />
+        </div>
       </button>
 
       {/* ================= ANSWER ================= */}
@@ -119,7 +125,7 @@ function FAQItem({
         <p
           className="
             text-[#94A3B8]
-            text-[1rem]
+            text-[0.9375rem] md:text-[1rem]
             leading-[1.5rem]
             font-normal
             font-[var(--Type-Font-Family-Body)]

@@ -37,25 +37,28 @@ export default function HeroSection() {
       >
         {/* TEXT BLOCK */}
         <div className="flex flex-col gap-6 max-w-[42rem]">
-          <h1 className="text-white text-[32px] md:text-[48px] lg:text-[64px] leading-[40px] md:leading-[60px] lg:leading-[80px] font-medium font-heading">
-            A Digital Marketing
-            <br className="hidden md:block" />
-            Agency That{" "}
+     <h1 className="text-white text-[32px] md:text-[48px] lg:text-[64px] leading-[40px] md:leading-[60px] lg:leading-[80px] font-medium font-heading">
+  {/* Line 1 */}
+  A Digital Marketing
+  <br />
 
-            {/* Owns with image underline */}
-            <span className="relative inline-block">
-              Owns
-              <img
-                src="/underline.svg"
-                alt=""
-                className="absolute left-0 top-[90%] w-[6rem] md:w-[10.9rem] rotate-[1.29deg] pointer-events-none"
-              />
-            </span>
+  {/* Line 2 */}
+  Agency That{" "}
+  <span className="relative inline-block">
+    Owns
+    <img
+      src="/underline.svg"
+      alt=""
+      className="absolute left-0 top-[90%] w-[4.5rem] md:w-[10.9rem] rotate-[1.29deg] pointer-events-none"
+    />
+  </span>
+  <br />
 
-            <br />
-            <span className="text-[#F90]">Business Outcomes</span>
-          </h1>
-
+  {/* Line 3 - Forced to stay on one line */}
+  <span className="text-[#F90] whitespace-nowrap">
+    Business Outcomes
+  </span>
+</h1>
           <p className="text-[#C2CAD6] text-[16px] md:text-[20px] leading-[28px] md:leading-[32px] font-body">
             We work with growing businesses that want marketing decisions tied
             to revenue, ROI, and long-term scalability, not just campaigns and
@@ -130,10 +133,21 @@ export default function HeroSection() {
         </button>
 
         {/* PARTNER LOGOS */}
-        <div className="flex flex-wrap items-center gap-6 lg:mt-[-1rem]">
-          <img src="/partner1.svg" alt="Google Partner" className="w-[120px] md:w-[152px] h-auto object-contain" />
-          <img src="/partner2.svg" alt="Meta Business Partner" className="h-[30px] md:h-auto object-contain" />
-        </div>
+    <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 lg:mt-[-1rem] w-full">
+  {/* Google Partner Logo */}
+  <img 
+    src="/partner1.svg" 
+    alt="Google Partner" 
+    className="w-[120px] md:w-[152px] h-[40px] md:h-auto object-contain" 
+  />
+  
+  {/* Meta Business Partner Logo */}
+  <img 
+    src="/partner2.svg" 
+    alt="Meta Business Partner" 
+    className="w-[120px] md:w-[152px] h-[40px] md:h-auto object-contain" 
+  />
+</div>
 
       </div>
 

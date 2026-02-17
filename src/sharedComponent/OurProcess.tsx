@@ -44,25 +44,23 @@ export default function OurProcessSection() {
         justify-center
         items-start
         gap-12
-        lg:gap-[4rem]
+        lg:gap-[5rem]
         px-6
         md:px-12
-        lg:px-[7.5rem]
+        lg:px-[5rem]
         py-12
-        lg:py-[5rem]
+        lg:py-[8rem]
         bg-[#02050E] 
-        ml-[6.5rem] 
       "
     >
-      {/* ⭐ LEFT — CARDS */}
-      <div className="relative flex flex-col gap-6 md:gap-8 w-full lg:w-[34rem] z-0">
+      {/* ⭐ LEFT — CARDS (Increased width from 34rem to 45rem) */}
+      <div className="relative flex flex-col gap-6 md:gap-8 w-full lg:w-[45rem] z-0">
         {PROCESS_STEPS.map((step, i) => (
           <div
             key={step.step}
             className="sticky"
             style={{
-              // Adjusts the stack offset: tighter on mobile, spread on desktop
-              top: `calc(4rem + ${i * 1.5}rem)`, 
+              top: `calc(5rem + ${i * 2}rem)`, 
               zIndex: i + 1,
             }}
           >
@@ -80,10 +78,10 @@ export default function OurProcessSection() {
           gap-6
           lg:gap-[2rem]
           w-full
-          lg:flex-[1_0_0]
+          lg:max-w-[30rem]
           lg:sticky
           top-[2rem]
-          lg:top-[6rem]
+          lg:top-[8rem]
           h-fit
           z-10
           bg-[#02050E]
@@ -91,15 +89,15 @@ export default function OurProcessSection() {
           lg:pb-0
         "
       >
-        <h2 className="text-white text-[2.5rem] md:text-[3rem] leading-[3rem] md:leading-[4rem] font-semibold">
+        <h2 className="text-white text-[2.5rem] md:text-[3.5rem] leading-tight font-semibold">
           Our <span className="text-[#F90]">Process</span>
         </h2>
 
-        <p className="text-[#C2CAD6] text-[1rem] leading-[1.5rem] max-w-md">
+        <p className="text-[#C2CAD6] text-[1.1rem] leading-[1.7rem] max-w-md">
           This process is designed to keep decisions clear and outcomes predictable.
         </p>
 
-        <button className="flex items-center justify-center gap-[0.75rem] px-[2rem] py-[0.75rem] rounded-[0.75rem] bg-[#F90] text-[#331F00] text-[1rem] font-bold w-full md:w-auto">
+        <button className="flex items-center justify-center gap-[0.75rem] px-[2.5rem] py-[1rem] rounded-[0.75rem] bg-[#F90] text-[#331F00] text-[1rem] font-bold w-full md:w-auto hover:opacity-90 transition-all">
           Get Started →
         </button>
       </div>
@@ -125,53 +123,33 @@ function ProcessCard({
         items-start
         gap-[1.5rem]
         p-8
-        lg:p-[3rem]
-        rounded-[1.5rem]
+        lg:p-[3.5rem]
+        rounded-[2rem]
         bg-[#050914]
         border border-white/10
         self-stretch
         shadow-2xl
       "
     >
-      {/* STEP NUMBER */}
       <div
         className="
           flex items-center justify-center
-          w-8 h-8
+          w-10 h-10
           rounded-full
           bg-white/10
           text-white
-          text-xs
-          font-semibold
+          text-sm
+          font-bold
         "
       >
         {step}
       </div>
 
-      {/* HEADING */}
-      <h3
-        className="
-          text-white
-          text-[1.5rem]
-          md:text-[2rem]
-          leading-[2rem]
-          md:leading-[2.75rem]
-          font-semibold
-        "
-      >
+      <h3 className="text-white text-[1.75rem] md:text-[2.25rem] leading-tight font-semibold">
         {title}
       </h3>
 
-      {/* PARAGRAPH */}
-      <p
-        className="
-          text-[#C2CAD6]
-          text-[0.875rem]
-          md:text-[1rem]
-          leading-[1.5rem]
-          font-normal
-        "
-      >
+      <p className="text-[#C2CAD6] text-[1rem] md:text-[1.1rem] leading-[1.6rem] font-normal">
         {description}
       </p>
     </div>

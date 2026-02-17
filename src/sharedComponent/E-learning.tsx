@@ -164,12 +164,15 @@ export default function ELearningCaseStudySection() {
         {/* METRICS GRID */}
         <div
           className="
-            grid
-            grid-cols-1
-            sm:grid-cols-2
-            gap-y-8
-            gap-x-5
-            self-stretch
+           grid
+    /* Changed to grid-cols-2 to show two items per row on mobile */
+    grid-cols-2
+    /* Keeps two items per row on tablets/small desktops */
+    sm:grid-cols-2
+    /* Adjust gaps for mobile vs desktop */
+    gap-y-8
+    gap-x-2 
+    sm:gap-x-4
           "
         >
           <Metric value="221X" label="Revenue growth" />

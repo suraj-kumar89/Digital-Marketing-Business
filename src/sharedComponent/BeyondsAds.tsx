@@ -33,7 +33,7 @@ export default function BeyondAdsSection() {
             leading-[2.75rem]
             md:leading-[3.5rem]
             lg:leading-[4rem]
-            font-medium
+            font-semibold
             font-[var(--font-jakarta)]
             text-white
           "
@@ -221,7 +221,7 @@ function Principle({
             md:text-[1.25rem]
             leading-[1.5rem]
             md:leading-[1.75rem]
-            font-medium
+            font-semibold
             font-[var(--font-jakarta)]
           "
         >

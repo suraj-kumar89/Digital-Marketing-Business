@@ -21,7 +21,9 @@ export default function Footer() {
       </div>
 
       {/* Middle: Contact Info + Socials */}
-      <div className="w-full flex flex-col md:flex-row justify-between gap-10 text-[13px] font-[400] text-[#94A3B8] leading-[20px] md:leading-[21.034px] font-[Plus Jakarta Sans] border-b border-gray-700 pb-8 md:pb-[50px]">
+      <div className="w-full flex flex-col md:flex-row justify-between gap-10 text-[13px] font-[400] text-[#94A3B8] leading-[20px] md:leading-[21.034px] font-[Plus Jakarta Sans] border-b border-gray-700 pb-8 md:pb-[50px] 
+        /* Centering for Mobile */
+        items-center md:items-start text-center md:text-left">
 
         {/* Left: Contact & Phone */}
         <div className="flex flex-col sm:flex-row gap-8 md:gap-10">
@@ -36,7 +38,7 @@ export default function Footer() {
         </div>
 
         {/* Right: Socials */}
-        <div className="flex flex-col items-start md:items-end gap-2">
+        <div className="flex flex-col items-center md:items-end gap-2">
           <p className="text-white text-[10px] uppercase tracking-widest">
             Socials
           </p>
@@ -63,7 +65,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom: Branding & Copyright */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center w-full gap-6 text-[10px] text-[#94A3B8]">
+      <div className="flex flex-col sm:flex-row justify-between items-center w-full gap-6 text-[10px] text-[#94A3B8]">
         <div className="w-[120px] md:w-[180px] lg:w-[200px]">
           <Image 
             src={logo} 

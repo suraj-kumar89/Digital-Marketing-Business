@@ -167,20 +167,24 @@ export default function StrategicPlanSection() {
         </div>
 
         {/* METRICS GRID */}
-        <div
-          className="
-            grid
-            gap-y-8
-            gap-x-4
-            grid-cols-1
-            sm:grid-cols-2
-          "
-        >
-          <Metric value="302%" label="Increase in Leads" />
-          <Metric value="188%" label="Increase in Sales" />
-          <Metric value="75%" label="Decrease in Cost Per Lead" />
-          <Metric value="380%" label="Increase in Meetings Booked" />
-        </div>
+      <div
+  className="
+    grid
+    /* Changed to grid-cols-2 to show two items per row on mobile */
+    grid-cols-2
+    /* Keeps two items per row on tablets/small desktops */
+    sm:grid-cols-2
+    /* Adjust gaps for mobile vs desktop */
+    gap-y-8
+    gap-x-2 
+    sm:gap-x-4
+  "
+>
+  <Metric value="302%" label="Increase in Leads" />
+  <Metric value="188%" label="Increase in Sales" />
+  <Metric value="75%" label="Decrease in Cost Per Lead" />
+  <Metric value="380%" label="Increase in Meetings Booked" />
+</div>
       </div>
     </section>
   )

@@ -19,10 +19,6 @@ import WhatWeDoSection from '@/sharedComponent/Whatwedo'
 export default function HomePage() {
   return (
     <>
-      {/* Wrap sections that use useSearchParams in Suspense.
-          This prevents the "missing-suspense-with-csr-bailout" error 
-          during the Vercel build.
-      */}
       <Suspense fallback={<div className="bg-[#050914] min-h-screen" />}>
         <HeroSection />
       </Suspense>
@@ -41,11 +37,8 @@ export default function HomePage() {
       <OurTeamSection/>
       <FAQSection/>
 
-      {/* Wrapping the bottom CTA as well just in case it shares the lead form logic */}
-      <Suspense fallback={<div className="bg-[#050914] h-96" />}>
-        <BookAStartegy/>
-      </Suspense>
 
+        <BookAStartegy/>
       <Footer/>
     </>
   )

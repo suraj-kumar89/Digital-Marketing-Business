@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-
+const assetPath = '/digital-marketing-agency';
 /* ================= SECTION ================= */
 
 export default function SystemsSection() {
@@ -67,19 +67,19 @@ export default function SystemsSection() {
       ">
 
         <SystemCard
-          icon="/system/system1.png"
+          icon={`${assetPath}/system/system1.png`}
           title="How Performance Is Tracked"
           description="Performance is tracked against business outcomes, not surface metrics. Data is set up to reflect what actually matters so progress can be measured with confidence."
         />
 
         <SystemCard
-          icon="/system/system2.png"
+          icon={`${assetPath}/system/system2.png`}
           title="How Decisions Are Reviewed"
           description="Results are reviewed regularly against goals and expectations. The focus stays on what to continue, what to adjust, and what to stop."
         />
 
         <SystemCard
-          icon="/system/system3.png"
+          icon={`${assetPath}/system/system3.png`}
           title="How Accountability Is Maintained"
           description="Ownership is clear from the start. Decisions, actions, and outcomes are tied together so there is no ambiguity about responsibility."
         />

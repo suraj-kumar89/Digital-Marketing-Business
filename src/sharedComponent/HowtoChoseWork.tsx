@@ -1,5 +1,6 @@
 'use client'
 import Image from "next/image"
+const assetPath = '/digital-marketing-agency';
 
 export default function HowWeChooseSection() {
   return (
@@ -76,7 +77,7 @@ export default function HowWeChooseSection() {
         <Principle
           icon={
             <Image
-              src="/icons/icon1.png"
+              src={`${assetPath}/icons/icon1.png`}
               alt="icon"
               width={40}
               height={40}
@@ -90,7 +91,7 @@ export default function HowWeChooseSection() {
         <Principle
           icon={
             <Image
-              src="/icons/icon2.png"
+              src={`${assetPath}/icons/icon2.png`}
               alt="icon"
               width={40}
               height={40}
@@ -104,7 +105,7 @@ export default function HowWeChooseSection() {
         <Principle
           icon={
             <Image
-              src="/icons/icon3.png"
+              src={`${assetPath}/icons/icon3.png`}
               alt="icon"
               width={40}
               height={40}
@@ -118,7 +119,7 @@ export default function HowWeChooseSection() {
         <Principle
           icon={
             <Image
-              src="/icons/icon4.png"
+              src={`${assetPath}/icons/icon4.png`}
               alt="icon"
               width={40}
               height={40}
@@ -134,7 +135,7 @@ export default function HowWeChooseSection() {
           <Principle
             icon={
               <Image
-                src="/icons/icon5.png"
+                src={`${assetPath}/icons/icon5.png`}
                 alt="icon"
                 width={40}
                 height={40}

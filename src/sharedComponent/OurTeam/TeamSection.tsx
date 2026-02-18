@@ -75,7 +75,7 @@ export default function OurTeamSection() {
       ">
         <TeamCard
           active={activeIndex === 0}
-          image="/team/shitanshu.jpg"
+          image={`${assetPath}/team/shitanshu.jpg`}
           name="Shitanshu Kumar"
           role="Founder · Performance Marketing Lead"
           description="Owns overall strategy, paid acquisition decisions, and performance direction. Involved from planning through execution to ensure outcomes stay aligned with business goals."
@@ -84,7 +84,7 @@ export default function OurTeamSection() {
 
         <TeamCard
           active={activeIndex === 1}
-          image="/team/shikhar.png"
+          image={`${assetPath}/team/shikhar.png`}
           name="Shikhar Chawla"
           role="Landing Pages & Conversion"
           description="Focuses on landing page structure, messaging clarity, and conversion flow to ensure traffic turns into meaningful results."
@@ -95,7 +95,7 @@ export default function OurTeamSection() {
         <div className="md:col-span-2 lg:col-span-1 flex justify-center w-full">
           <TeamCard
             active={activeIndex === 2}
-            image="/team/pritesh.png"
+            image={`${assetPath}/team/pritesh.png`}
             name="Pritesh Mishra"
             role="Sr. SEO Manager"
             description="Focuses on landing page structure, messaging clarity, and conversion flow to ensure traffic turns into meaningful results."

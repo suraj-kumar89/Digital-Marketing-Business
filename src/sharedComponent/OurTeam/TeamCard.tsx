@@ -1,6 +1,7 @@
 'use client'
 import Image from "next/image"
 import { useState } from "react"
+const assetPath = '/digital-marketing-agency';
 
 interface TeamCardProps {
   image: string
@@ -19,7 +20,6 @@ export default function TeamCard({
   description,
   logos = [],
   active = false,
-  onIconClick,
 }: TeamCardProps) {
 
   const [isOpen, setIsOpen] = useState(false)

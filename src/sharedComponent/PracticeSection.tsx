@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-
+const assetPath = '/digital-marketing-agency';
 /* ================= TYPES ================= */
 
 type Testimonial = {
@@ -21,57 +21,57 @@ const TESTIMONIALS: Testimonial[] = [
   {
     name: 'Sandeep John',
     role: 'Marketing Director',
-    image: '/testimonials/test3.png',
+    image: `${assetPath}/testimonials/test3.png`,
     quote:
       '“Shitanshu is a highly skilled Performance Marketer. During our time together at Outplay, Shitanshu consistently delivered impressive results, thanks to his deep understanding of data analysis, ad creative, and audience targeting. I was particularly impressed with Shitanshu ability to deliver on lead requirements from paid campaigns while keeping costs low.”',
     metric: '8x',
     metricText: 'Increase in conversion rate',
-    logo: '/testimonials/testl1.svg',
+    logo: `${assetPath}/testimonials/testl1.svg`,
   },
   {
     name: 'Pramod Sahoo',
     role: 'Founder',
-    image: '/testimonials/test2.png',
+    image: `${assetPath}/testimonials/test2.png`,
     quote: '“Shitanshu and his team has helped revive our yoga school, we went from zero visibility to getting student bookings within the first month. They transformed our website, ran effective ads, and got us ranking on Google for top keywords. Truly a game-changer for us.”',
     metric: '8x',
     metricText: 'Increase in conversion rate',
-    logo: '/testimonials/testl3.svg',
+    logo: `${assetPath}/testimonials/testl3.svg`,
   },
   {
     name: 'Noaman Ansari',
     role: 'CEO',
-    image: '/testimonials/test4.png',
+    image: `${assetPath}/testimonials/test4.png`,
     quote: '“Working with Shitanshu and his team was a complete game-changer for our business. Before partnering with him, we were struggling to hit our targets despite investing in ads. But within just two months, not only did we surpass our lead generation goals, we also saw a significant jump in revenue.”',
     metric: '8x',
     metricText: 'Increase in conversion rate',
-    logo: '/testimonials/testl4.svg',
+    logo: `${assetPath}/testimonials/testl4.svg`,
   },
   {
     name: 'Nisha Seth',
     role: 'Co-Founder',
-    image: '/testimonials/test5.png',
+    image: `${assetPath}/testimonials/test5.png`,
     quote: '“Bluvo Digital helped launch my fashion brand, Brazen Born, and we started getting orders much sooner than expected. Their strategy, audience targeting, and messaging were spot on. I’d recommend them to anyone starting a new brand.”',
     metric: '8x',
     metricText: 'Increase in conversion rate',
-    logo: '/testimonials/testl5.svg',
+    logo: `${assetPath}/testimonials/testl5.svg`,
   },
   {
     name: 'Chesta Mittal',
     role: 'Founder',
-    image: '/testimonials/test1.png',
+    image: `${assetPath}/testimonials/test1.png`,
     quote: '“Shitanshu is a highly skilled Performance Marketer. During our time together at Outplay, Shitanshu consistently delivered impressive results, thanks to his deep understanding of data analysis, ad creative, and audience targeting. I was particularly impressed with Shitanshu ability to deliver on lead requirements from paid campaigns while keeping costs low.”',
     metric: '8x',
     metricText: 'Increase in conversion rate',
-    logo: '/testimonials/testl2.svg',
+    logo: `${assetPath}/testimonials/testl2.svg`,
   },
   {
     name: 'Devang Savaliya',
     role: 'CMO',
-    image: '/testimonials/test6.png',
+    image: `${assetPath}/testimonials/test6.png`,
     quote: '“Working with Bluvo Digital led to a clear increase in our website traffic and a noticeable drop in ad costs. Their team was highly professional, met every deadline, and maintained excellent communication throughout. Their timely support and responsiveness truly stood out.”',
     metric: '8x',
     metricText: 'Increase in conversion rate',
-    logo: '/testimonials/testl6.svg',
+    logo: `${assetPath}/testimonials/testl6.svg`,
   },
 ]
 

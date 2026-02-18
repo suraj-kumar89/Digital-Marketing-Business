@@ -2,6 +2,7 @@
 
 import TeamCard from './TeamCard'
 import { useEffect, useState } from "react"
+const assetPath = '/digital-marketing-agency';
 
 /* ================= SECTION ================= */
 
@@ -78,7 +79,7 @@ export default function OurTeamSection() {
           name="Shitanshu Kumar"
           role="Founder · Performance Marketing Lead"
           description="Owns overall strategy, paid acquisition decisions, and performance direction. Involved from planning through execution to ensure outcomes stay aligned with business goals."
-          logos={['/logo/logo18.svg','/logo/logo19.svg','/logo/logo20.svg','/logo/logo21.svg', '/logo/logo22.svg', '/logo/logo23.svg']}
+          logos={[`${assetPath}/logo/logo18.svg`, `${assetPath}/logo/logo19.svg`, `${assetPath}/logo/logo20.svg`, `${assetPath}/logo/logo21.svg`, `${assetPath}/logo/logo22.svg`, `${assetPath}/logo/logo23.svg`]}
         />
 
         <TeamCard
@@ -87,7 +88,7 @@ export default function OurTeamSection() {
           name="Shikhar Chawla"
           role="Landing Pages & Conversion"
           description="Focuses on landing page structure, messaging clarity, and conversion flow to ensure traffic turns into meaningful results."
-          logos={['/logo/logo24.svg','/logo/logo25.svg','/logo/logo26.svg','/logo/logo27.svg','/logo/logo28.svg']}
+          logos={[`${assetPath}/logo/logo24.svg`, `${assetPath}/logo/logo25.svg`, `${assetPath}/logo/logo26.svg`, `${assetPath}/logo/logo27.svg`, `${assetPath}/logo/logo28.svg`]}
         />
 
         {/* This card spans 1 or 2 cols depending on breakpoint to avoid awkward layout on tablet */}
@@ -98,7 +99,7 @@ export default function OurTeamSection() {
             name="Pritesh Mishra"
             role="Sr. SEO Manager"
             description="Focuses on landing page structure, messaging clarity, and conversion flow to ensure traffic turns into meaningful results."
-            logos={['/logo/logo29.svg','/logo/logo30.svg','/logo/logo31.svg','/logo/logo32.svg']}
+            logos={[`${assetPath}/logo/logo29.svg`, `${assetPath}/logo/logo30.svg`, `${assetPath}/logo/logo31.svg`, `${assetPath}/logo/logo32.svg`]}
           />
         </div>
 

@@ -1,24 +1,24 @@
 'use client'
 
 import Image from 'next/image'
-
+const assetPath = '/digital-marketing-agency';
 const logos = [
-  '/logo/logo1.svg',
-  '/logo/logo2.svg',
-  '/logo/logo3.svg',
-  '/logo/logo4.svg',
-  '/logo/logo5.svg',
-  '/logo/logo6.svg',
-  '/logo/logo7.svg',
-  '/logo/logo8.svg',
-  '/logo/logo9.svg',
-  '/logo/logo10.svg',
-  '/logo/logo11.svg',
-  '/logo/logo12.svg',
-  '/logo/logo13.svg',
-  '/logo/logo14.svg',
-  '/logo/logo15.svg',
-  '/logo/logo16.svg',
+  `${assetPath}/logo/logo1.svg`,
+  `${assetPath}/logo/logo2.svg`,
+  `${assetPath}/logo/logo3.svg`,
+  `${assetPath}/logo/logo4.svg`,
+  `${assetPath}/logo/logo5.svg`,
+  `${assetPath}/logo/logo6.svg`,
+  `${assetPath}/logo/logo7.svg`,
+  `${assetPath}/logo/logo8.svg`,
+  `${assetPath}/logo/logo9.svg`,
+  `${assetPath}/logo/logo10.svg`,
+  `${assetPath}/logo/logo11.svg`,
+  `${assetPath}/logo/logo12.svg`,
+  `${assetPath}/logo/logo13.svg`,
+  `${assetPath}/logo/logo14.svg`,
+  `${assetPath}/logo/logo15.svg`,
+  `${assetPath}/logo/logo16.svg`,
 ]
 
 export default function LogoMarqueeSection() {
@@ -73,7 +73,7 @@ export default function LogoMarqueeSection() {
             lg:block
             lg:w-[15rem]
             xl:w-[21.1875rem]
-            h-[4.1875rem]
+            h-[10.1875rem]
             pointer-events-none
             z-[1]
             bg-[linear-gradient(90deg,#050914_11.06%,rgba(5,9,20,0)_100%)]

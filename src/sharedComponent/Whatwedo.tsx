@@ -1,11 +1,11 @@
 'use client'
 
 import Image from 'next/image'
-
+const assetPath = '/digital-marketing-agency';
 const ICON_MAP: Record<string, string> = {
-  web: '/whatwedo/img4.png',
-  message: '/whatwedo/img5.png',
-  flow: '/whatwedo/img6.png',
+  web: `${assetPath}/whatwedo/img4.png`,
+  message: `${assetPath}/whatwedo/img5.png`,
+  flow: `${assetPath}/whatwedo/img6.png`,
 }
 
 const SERVICES = [
@@ -16,9 +16,9 @@ const SERVICES = [
     type: 'images',
     label: 'Platforms worked on:',
     platforms: [
-      '/whatwedo/img1.svg',
-      '/whatwedo/img2.svg',
-      '/whatwedo/img3.svg',
+      `${assetPath}/whatwedo/img1.svg`,
+      `${assetPath}/whatwedo/img2.svg`,
+      `${assetPath}/whatwedo/img3.svg`,
     ],
   },
   {

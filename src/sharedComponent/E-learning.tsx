@@ -55,7 +55,7 @@ export default function ELearningCaseStudySection() {
             leading-[2.75rem]
             md:leading-[3.5rem]
             lg:leading-[4rem]
-            font-medium
+            font-semibold
             font-[var(--Type-Font-Family-Headings)]
           "
         >
@@ -129,7 +129,7 @@ export default function ELearningCaseStudySection() {
               text-[#F90]
               text-[1.5rem]
               leading-[2.25rem]
-              font-medium
+              font-semibold
               font-[var(--Type-Font-Family-Headings)]
             "
           >

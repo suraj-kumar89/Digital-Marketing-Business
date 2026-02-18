@@ -54,7 +54,7 @@ export default function StrategicPlanSection() {
             md:text-[3rem]
             leading-[3rem]
             md:leading-[4rem]
-            font-medium
+            font-semibold
             font-[var(--Type-Font-Family-Headings)]
           "
         >
@@ -127,7 +127,7 @@ export default function StrategicPlanSection() {
               text-[#F90]
               text-[1.5rem]
               leading-[2.25rem]
-              font-medium
+              font-semibold
               font-[var(--Type-Font-Family-Headings)]
             "
           >

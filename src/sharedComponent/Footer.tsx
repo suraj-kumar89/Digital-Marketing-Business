@@ -43,9 +43,6 @@ export default function Footer() {
             Socials
           </p>
           <div className="flex items-center gap-3 sm:gap-4">
-            <a href="#" className="p-2 border border-white/20 rounded hover:border-[#FF9900] hover:text-[#FF9900] transition group">
-              <FaFacebookF className="w-4 h-4 md:w-[1.25rem] md:h-[1.2455rem]" />
-            </a>
             <a
               href="https://www.linkedin.com/in/shitanshu-kumar1/"
               target="_blank"
@@ -54,10 +51,10 @@ export default function Footer() {
             >
               <FaLinkedinIn className="w-4 h-4 md:w-[1.25rem] md:h-[1.2455rem]" />
             </a>
-            <a href="#" className="p-2 border border-white/20 rounded hover:border-[#FF9900] hover:text-[#FF9900] transition">
+            <a href="/https://www.instagram.com/shitanshu__kumar" className="p-2 border border-white/20 rounded hover:border-[#FF9900] hover:text-[#FF9900] transition">
               <FaInstagram className="w-4 h-4 md:w-[1.25rem] md:h-[1.2455rem]" />
             </a>
-            <a href="#" className="p-2 border border-white/20 rounded hover:border-[#FF9900] hover:text-[#FF9900] transition">
+            <a href="/https://x.com/kumarshitanshu?s=11&t=rDQmr8qiV0spWkImB1Kn3w" className="p-2 border border-white/20 rounded hover:border-[#FF9900] hover:text-[#FF9900] transition">
               <FaXTwitter className="w-4 h-4 md:w-[1.25rem] md:h-[1.2455rem]" />
             </a>
           </div>

@@ -1,6 +1,69 @@
 'use client'
 
+import { useState, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
+import { submitLead } from '@/app/actions/submit-lead'
+const assetPath = '/digital-marketing-agency';
+
+  
 export default function HeroSection() {
+const searchParams = useSearchParams()
+  const [loading, setLoading] = useState(false)
+  const [status, setStatus] = useState<{ type: 'success' | 'error' | null, message: string }>({
+    type: null,
+    message: ''
+  })
+
+  // State to hold UTMs
+  const [utmData, setUtmData] = useState({
+    utm_source: '',
+    utm_medium: '',
+    utm_campaign: '',
+  })
+
+  useEffect(() => {
+    setUtmData({
+      utm_source: searchParams.get('utm_source') || '',
+      utm_medium: searchParams.get('utm_medium') || '',
+      utm_campaign: searchParams.get('utm_campaign') || '',
+    })
+  }, [searchParams])
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setLoading(true)
+    setStatus({ type: null, message: '' }) // Clear previous status
+
+    const form = e.currentTarget
+    const formData = {
+      full_name: (form.elements[0] as HTMLInputElement).value,
+      email: (form.elements[1] as HTMLInputElement).value,
+      website: (form.elements[2] as HTMLInputElement).value,
+      marketing_spend: (form.elements[3] as HTMLSelectElement).value,
+      services: (form.elements[4] as HTMLSelectElement).value,
+      goals: (form.elements[5] as HTMLTextAreaElement).value,
+    }
+
+    const result = await submitLead(formData, utmData)
+
+    if (result.success) {
+      setStatus({ 
+        type: 'success', 
+        message: 'Your form is submitted successfully! You will get back soon.' 
+      })
+      form.reset() // Clears form on success
+    } else {
+      setStatus({ 
+        type: 'error', 
+        message: result.error || 'Something went wrong.' 
+      })
+    }
+    setLoading(false)
+  }
+
+
+
+
   return (
     <section
       className="
@@ -37,7 +100,7 @@ export default function HeroSection() {
       >
         {/* TEXT BLOCK */}
         <div className="flex flex-col gap-6 max-w-[42rem]">
-     <h1 className="text-white text-[32px] md:text-[48px] lg:text-[64px] leading-[40px] md:leading-[60px] lg:leading-[80px] font-medium font-heading">
+     <h1 className="text-white text-[32px] md:text-[48px] lg:text-[62px] leading-[40px] md:leading-[60px] lg:leading-[78px] font-semibold font-heading">
   {/* Line 1 */}
   A Digital Marketing
   <br />
@@ -47,7 +110,7 @@ export default function HeroSection() {
   <span className="relative inline-block">
     Owns
     <img
-      src="/underline.svg"
+      src={`${assetPath}/underline.svg`}
       alt=""
       className="absolute left-0 top-[90%] w-[4.5rem] md:w-[10.9rem] rotate-[1.29deg] pointer-events-none"
     />
@@ -136,14 +199,14 @@ export default function HeroSection() {
     <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 lg:mt-[-1rem] w-full">
   {/* Google Partner Logo */}
   <img 
-    src="/partner1.svg" 
+    src={`${assetPath}/partner1.svg`} 
     alt="Google Partner" 
     className="w-[120px] md:w-[152px] h-[40px] md:h-auto object-contain" 
   />
   
   {/* Meta Business Partner Logo */}
   <img 
-    src="/partner2.svg" 
+    src={`${assetPath}/partner2.svg`} 
     alt="Meta Business Partner" 
     className="w-[120px] md:w-[152px] h-[40px] md:h-auto object-contain" 
   />
@@ -173,7 +236,7 @@ export default function HeroSection() {
           Book a Strategy Call
         </h3>
 
-        <form className="w-full flex flex-col gap-4">
+        <form onSubmit={handleSubmit} className="w-full flex flex-col gap-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="flex flex-col gap-2">
               <label className="text-[#BDCBF6] text-[14px] font-normal">Full Name</label>
@@ -222,10 +285,22 @@ export default function HeroSection() {
             <label className="text-[#BDCBF6] text-[14px] font-normal">What are you trying to achieve?</label>
             <textarea placeholder="e.g. Low demo bookings" className="w-full px-4 py-3 rounded-[8px] bg-[#0A0F1D] text-white text-[14px] outline-none min-h-[80px]" />
           </div>
+<button 
+          type="submit" 
+          disabled={loading}
+          className="mt-2 w-full flex justify-center items-center gap-2 px-6 py-3 rounded-[8px] bg-[#E5E5E5] text-[#1E293B] font-semibold disabled:opacity-50"
+        >
+          {loading ? 'Submitting...' : 'Submit →'}
+        </button>
 
-          <button type="submit" className="mt-2 w-full flex justify-center items-center gap-2 px-6 py-3 rounded-[8px] bg-[#E5E5E5] text-[#1E293B] text-[14px] font-semibold">
-            Submit →
-          </button>
+        {/* IN-LINE NOTIFICATION MESSAGE */}
+        {status.type && (
+          <p className={`text-sm text-center font-medium mt-2 ${
+            status.type === 'success' ? 'text-green-400' : 'text-orange-400'
+          }`}>
+            {status.message}
+          </p>
+        )}
           <p className="text-xs text-[#94A3B8] text-center">No spam. Just a focused conversation about growth.</p>
         </form>
       </div>

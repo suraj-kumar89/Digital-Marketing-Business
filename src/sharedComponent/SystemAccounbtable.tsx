@@ -29,7 +29,7 @@ export default function SystemsSection() {
             /* Responsive font size for heading */
             text-[2rem] md:text-[2.5rem] lg:text-[3rem]
             leading-[2.75rem] md:leading-[3.5rem] lg:leading-[4rem]
-            font-medium
+            font-semibold
             font-[var(--Type-Font-Family-Headings)]
           "
         >
@@ -130,7 +130,7 @@ function SystemCard({
           text-white
           text-[1.25rem] md:text-[1.5rem]
           leading-[1.75rem] md:leading-[2.25rem]
-          font-medium
+          font-semibold
           font-[var(--Type-Font-Family-Headings)]
         "
       >

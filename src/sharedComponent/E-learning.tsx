@@ -1,5 +1,7 @@
 'use client'
 
+import Link from "next/link";
+
 export default function ELearningCaseStudySection() {
   return (
     <section
@@ -93,6 +95,7 @@ export default function ELearningCaseStudySection() {
         </div>
 
         {/* CTA BUTTON */}
+        <Link href="/book-a-call">
         <button
           className="
             flex
@@ -113,10 +116,12 @@ export default function ELearningCaseStudySection() {
             font-[var(--Type-Font-Family-UI)]
             w-full
             md:w-auto
+            cursor-pointer
           "
         >
           Begin Your Transformation
         </button>
+        </Link>
       </div>
 
       {/* ================= RIGHT COLUMN ================= */}

@@ -1,6 +1,7 @@
 'use client'
 import Image from "next/image"
 const assetPath = '/digital-marketing-agency';
+import Link from "next/link"
 
 export default function HowWeChooseSection() {
   return (
@@ -44,6 +45,7 @@ export default function HowWeChooseSection() {
         </div>
 
         {/* CTA BUTTON */}
+        <Link href="/book-a-call">
         <button
           className="
             flex
@@ -63,10 +65,12 @@ export default function HowWeChooseSection() {
             font-[var(--font-jakarta)]
             w-full
             md:w-auto
+            cursor-pointer
           "
         >
           Get Started →
         </button>
+           </Link>
 
       </div>
 

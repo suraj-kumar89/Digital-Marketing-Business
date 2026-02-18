@@ -3,16 +3,21 @@
 import { useState, useEffect } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { submitLead } from '@/app/actions/submit-lead'
+import { useRouter } from 'next/navigation'
+import Link from 'next/link'
+
 const assetPath = '/digital-marketing-agency';
 
-  
+
 export default function HeroSection() {
-const searchParams = useSearchParams()
+  const searchParams = useSearchParams()
   const [loading, setLoading] = useState(false)
   const [status, setStatus] = useState<{ type: 'success' | 'error' | null, message: string }>({
     type: null,
     message: ''
   })
+  const router = useRouter()
+
 
   // State to hold UTMs
   const [utmData, setUtmData] = useState({
@@ -47,15 +52,14 @@ const searchParams = useSearchParams()
     const result = await submitLead(formData, utmData)
 
     if (result.success) {
-      setStatus({ 
-        type: 'success', 
-        message: 'Your form is submitted successfully! You will get back soon.' 
-      })
-      form.reset() // Clears form on success
+      form.reset()
+
+      // Redirect to thank you page
+      router.push('/thank-you')
     } else {
-      setStatus({ 
-        type: 'error', 
-        message: result.error || 'Something went wrong.' 
+      setStatus({
+        type: 'error',
+        message: result.error || 'Something went wrong.'
       })
     }
     setLoading(false)
@@ -100,28 +104,28 @@ const searchParams = useSearchParams()
       >
         {/* TEXT BLOCK */}
         <div className="flex flex-col gap-6 max-w-[42rem]">
-     <h1 className="text-white text-[32px] md:text-[48px] lg:text-[62px] leading-[40px] md:leading-[60px] lg:leading-[78px] font-semibold font-heading">
-  {/* Line 1 */}
-  A Digital Marketing
-  <br />
+          <h1 className="text-white text-[32px] md:text-[48px] lg:text-[62px] leading-[40px] md:leading-[60px] lg:leading-[78px] font-semibold font-heading">
+            {/* Line 1 */}
+            A Digital Marketing
+            <br />
 
-  {/* Line 2 */}
-  Agency That{" "}
-  <span className="relative inline-block">
-    Owns
-    <img
-      src={`${assetPath}/underline.svg`}
-      alt=""
-      className="absolute left-0 top-[90%] w-[4.5rem] md:w-[10.9rem] rotate-[1.29deg] pointer-events-none"
-    />
-  </span>
-  <br />
+            {/* Line 2 */}
+            Agency That{" "}
+            <span className="relative inline-block">
+              Owns
+              <img
+                src={`${assetPath}/underline.svg`}
+                alt=""
+                className="absolute left-0 top-[90%] w-[4.5rem] md:w-[10.9rem] rotate-[1.29deg] pointer-events-none"
+              />
+            </span>
+            <br />
 
-  {/* Line 3 - Forced to stay on one line */}
-  <span className="text-[#F90] whitespace-nowrap">
-    Business Outcomes
-  </span>
-</h1>
+            {/* Line 3 - Forced to stay on one line */}
+            <span className="text-[#F90] whitespace-nowrap">
+              Business Outcomes
+            </span>
+          </h1>
           <p className="text-[#C2CAD6] text-[16px] md:text-[20px] leading-[28px] md:leading-[32px] font-body">
             We work with growing businesses that want marketing decisions tied
             to revenue, ROI, and long-term scalability, not just campaigns and
@@ -170,6 +174,7 @@ const searchParams = useSearchParams()
         </ul>
 
         {/* CTA BUTTON */}
+        <Link href="/book-a-call">
         <button
           className="
             flex
@@ -190,31 +195,34 @@ const searchParams = useSearchParams()
             lg:mt-[-2rem]
             w-full
             md:w-auto
+            cursor-pointer
           "
         >
           Book a Strategy Call
         </button>
-
+</Link>
         {/* PARTNER LOGOS */}
-    <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 lg:mt-[-1rem] w-full">
-  {/* Google Partner Logo */}
-  <img 
-    src={`${assetPath}/partner1.svg`} 
-    alt="Google Partner" 
-    className="w-[120px] md:w-[152px] h-[40px] md:h-auto object-contain" 
-  />
-  
-  {/* Meta Business Partner Logo */}
-  <img 
-    src={`${assetPath}/partner2.svg`} 
-    alt="Meta Business Partner" 
-    className="w-[120px] md:w-[152px] h-[40px] md:h-auto object-contain" 
-  />
-</div>
+        <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 lg:mt-[-1rem] w-full">
+          {/* Google Partner Logo */}
+          <img
+            src={`${assetPath}/partner1.svg`}
+            alt="Google Partner"
+            className="w-[120px] md:w-[152px] h-[40px] md:h-auto object-contain"
+          />
+
+          {/* Meta Business Partner Logo */}
+          <img
+            src={`${assetPath}/partner2.svg`}
+            alt="Meta Business Partner"
+            className="w-[120px] md:w-[152px] h-[40px] md:h-auto object-contain"
+          />
+        </div>
 
       </div>
 
       {/* RIGHT FORM CARD */}
+
+      
       <div
         className="
           flex
@@ -232,9 +240,11 @@ const searchParams = useSearchParams()
           bg-[#050914]
         "
       >
+       
         <h3 className="self-start text-white text-[20px] md:text-[24px] leading-[30px] md:leading-[36px] font-medium font-[var(--font-jakarta)]">
           Book a Strategy Call
         </h3>
+       
 
         <form onSubmit={handleSubmit} className="w-full flex flex-col gap-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -262,7 +272,7 @@ const searchParams = useSearchParams()
                 <option>5–10 Lakhs</option>
               </select>
               <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#52627A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#52627A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </div>
             </div>
           </div>
@@ -276,7 +286,7 @@ const searchParams = useSearchParams()
                 <option>SEO</option>
               </select>
               <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#52627A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#52627A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </div>
             </div>
           </div>
@@ -285,22 +295,21 @@ const searchParams = useSearchParams()
             <label className="text-[#BDCBF6] text-[14px] font-normal">What are you trying to achieve?</label>
             <textarea placeholder="e.g. Low demo bookings" className="w-full px-4 py-3 rounded-[8px] bg-[#0A0F1D] text-white text-[14px] outline-none min-h-[80px]" />
           </div>
-<button 
-          type="submit" 
-          disabled={loading}
-          className="mt-2 w-full flex justify-center items-center gap-2 px-6 py-3 rounded-[8px] bg-[#E5E5E5] text-[#1E293B] font-semibold disabled:opacity-50"
-        >
-          {loading ? 'Submitting...' : 'Submit →'}
-        </button>
+          <button
+            type="submit"
+            disabled={loading}
+            className="mt-2 w-full flex justify-center items-center gap-2 px-6 py-3 rounded-[8px] bg-[#E5E5E5] text-[#1E293B] font-semibold disabled:opacity-50"
+          >
+            {loading ? 'Submitting...' : 'Submit →'}
+          </button>
 
-        {/* IN-LINE NOTIFICATION MESSAGE */}
-        {status.type && (
-          <p className={`text-sm text-center font-medium mt-2 ${
-            status.type === 'success' ? 'text-green-400' : 'text-orange-400'
-          }`}>
-            {status.message}
-          </p>
-        )}
+          {/* IN-LINE NOTIFICATION MESSAGE */}
+          {status.type && (
+            <p className={`text-sm text-center font-medium mt-2 ${status.type === 'success' ? 'text-green-400' : 'text-orange-400'
+              }`}>
+              {status.message}
+            </p>
+          )}
           <p className="text-xs text-[#94A3B8] text-center">No spam. Just a focused conversation about growth.</p>
         </form>
       </div>

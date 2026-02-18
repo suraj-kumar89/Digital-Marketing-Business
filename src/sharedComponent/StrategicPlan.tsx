@@ -1,5 +1,5 @@
 'use client'
-
+import Link from 'next/link'
 export default function StrategicPlanSection() {
   return (
     <section
@@ -92,6 +92,7 @@ export default function StrategicPlanSection() {
         </div>
 
         {/* BUTTON */}
+        <Link href="/book-a-call">
         <button
           className="
             flex
@@ -112,10 +113,12 @@ export default function StrategicPlanSection() {
             font-[var(--Type-Font-Family-UI)]
             w-full
             md:w-auto
+            cursor-pointer
           "
         >
           Schedule a Strategy Session
         </button>
+        </Link>
       </div>
 
       {/* ================= RIGHT CONTENT ================= */}

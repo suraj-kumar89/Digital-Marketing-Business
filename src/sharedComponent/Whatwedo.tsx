@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link';
 const assetPath = '/digital-marketing-agency';
 const ICON_MAP: Record<string, string> = {
   web: `${assetPath}/whatwedo/img4.png`,
@@ -92,7 +93,7 @@ export default function WhatWeDoSection() {
         <p className="text-[#C2CAD6] text-[1rem] leading-[1.5rem] font-[var(--font-jakarta)]">
           Our core services, delivered with clear ownership and measurable outcomes.
         </p>
-
+        <Link href="/book-a-call">
         <button
           className="
             flex
@@ -112,10 +113,12 @@ export default function WhatWeDoSection() {
             font-[var(--font-jakarta)]
             w-full
             md:w-auto
+            cursor-pointer
           "
         >
           Get Started →
         </button>
+        </Link>
       </div>
 
       {/* RIGHT STACK */}

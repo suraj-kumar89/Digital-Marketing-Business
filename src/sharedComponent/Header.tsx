@@ -22,7 +22,7 @@ export default function Header() {
       "
     >
       {/* LOGO */}
-      <Link href="/" className="flex items-center shrink-0">
+      <Link href="#" className="flex items-center shrink-0">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 185 20"
@@ -74,6 +74,7 @@ export default function Header() {
             transition-colors
             hover:bg-[#E68A00]
             focus:outline-none
+            cursor-pointer
           "
           style={{ fontFamily: '"Plus Jakarta Sans"' }}
         >

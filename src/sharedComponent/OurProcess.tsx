@@ -1,5 +1,7 @@
 'use client'
 
+import Link from "next/link"
+
 const PROCESS_STEPS = [
   {
     step: '01',
@@ -96,10 +98,11 @@ export default function OurProcessSection() {
         <p className="text-[#C2CAD6] text-[1.1rem] leading-[1.7rem] max-w-md">
           This process is designed to keep decisions clear and outcomes predictable.
         </p>
-
-        <button className="flex items-center justify-center gap-[0.75rem] px-[2.5rem] py-[1rem] rounded-[0.75rem] bg-[#F90] text-[#331F00] text-[1rem] font-bold w-full md:w-auto hover:opacity-90 transition-all">
+        <Link href="/book-a-call">
+        <button className="flex items-center justify-center gap-[0.75rem] px-[2.5rem] py-[1rem] rounded-[0.75rem] bg-[#F90] text-[#331F00] text-[1rem] font-bold w-full md:w-auto hover:opacity-90 transition-all cursor-pointer">
           Get Started →
         </button>
+        </Link>
       </div>
     </section>
   )

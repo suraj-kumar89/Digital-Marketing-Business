@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 export default function BeyondAdsSection() {
   return (
     <section
@@ -70,6 +71,7 @@ export default function BeyondAdsSection() {
         </div>
 
         {/* CTA BUTTON */}
+           <Link href="/book-a-call">
         <button
           className="
             mt-4
@@ -94,6 +96,7 @@ export default function BeyondAdsSection() {
         >
           Book a Strategy Call
         </button>
+        </Link>
       </div>
 
       {/* RIGHT CARD */}

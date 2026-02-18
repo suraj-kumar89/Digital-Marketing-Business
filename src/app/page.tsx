@@ -1,3 +1,4 @@
+import { Suspense } from 'react' // Import Suspense
 import BeyondAdsSection from '@/sharedComponent/BeyondsAds'
 import BookAStartegy from '@/sharedComponent/BookAStratgyCall'
 import ELearningCaseStudySection from '@/sharedComponent/E-learning'
@@ -18,7 +19,14 @@ import WhatWeDoSection from '@/sharedComponent/Whatwedo'
 export default function HomePage() {
   return (
     <>
-      <HeroSection />
+      {/* Wrap sections that use useSearchParams in Suspense.
+          This prevents the "missing-suspense-with-csr-bailout" error 
+          during the Vercel build.
+      */}
+      <Suspense fallback={<div className="bg-[#050914] min-h-screen" />}>
+        <HeroSection />
+      </Suspense>
+
       <LogoMarqueeSection/>
       <GrowthDecisionsSection/>
       <BeyondAdsSection/>
@@ -32,7 +40,12 @@ export default function HomePage() {
       <SystemsSection/>
       <OurTeamSection/>
       <FAQSection/>
-      <BookAStartegy/>
+
+      {/* Wrapping the bottom CTA as well just in case it shares the lead form logic */}
+      <Suspense fallback={<div className="bg-[#050914] h-96" />}>
+        <BookAStartegy/>
+      </Suspense>
+
       <Footer/>
     </>
   )

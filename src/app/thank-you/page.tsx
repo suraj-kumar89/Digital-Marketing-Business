@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import Footer from '@/sharedComponent/Footer'
 
 export default function BookDemo() {
   const router = useRouter()
@@ -28,39 +29,47 @@ export default function BookDemo() {
   }, [router])
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center bg-black px-4 py-8">
-      <h1 className="text-white text-3xl md:text-4xl lg:text-6xl font-semibold text-center pt-12 lg:pt-20 pb-8 lg:pb-10 leading-tight">
-        Thank You! Your Next Step:
-        <br />
-        Book a Call With Me
-      </h1>
+    <div className="min-h-screen flex flex-col justify-between bg-black">
+      
+      {/* CENTER CONTENT */}
+      <div className="flex flex-col justify-center items-center px-4 py-8">
+        <h1 className="text-white text-3xl md:text-4xl lg:text-6xl font-semibold text-center pt-12 lg:pt-20 pb-8 lg:pb-10 leading-tight">
+          Thank You! Your Next Step:
+          <br />
+          Book a Call With Me
+        </h1>
 
-      {/* Responsive container */}
-      <div className="w-full max-w-[1100px]">
-        <div
-          className="calendly-inline-widget w-full"
-          data-url="https://calendly.com/shitanshu-digital/saas-performance-marketing"
-          style={{
-            minWidth: '320px',
-            height: '80vh', // mobile default
-          }}
-        />
+        {/* Responsive container */}
+        <div className="w-full max-w-[1100px]">
+          <div
+            className="calendly-inline-widget w-full"
+            data-url="https://calendly.com/shitanshu-digital/saas-performance-marketing"
+            style={{
+              minWidth: '320px',
+              height: '80vh',
+            }}
+          />
+        </div>
       </div>
+
+      {/* ✅ FULL WIDTH FOOTER */}
+      <Footer />
 
       {/* Responsive height handling */}
       <style jsx>{`
         @media (min-width: 768px) {
           .calendly-inline-widget {
-            height: 85vh !important; /* tablet */
+            height: 85vh !important;
           }
         }
 
         @media (min-width: 1024px) {
           .calendly-inline-widget {
-            height: 700px !important; /* desktop (same as your original) */
+            height: 700px !important;
           }
         }
       `}</style>
+
     </div>
   )
 }

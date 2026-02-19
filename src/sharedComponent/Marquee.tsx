@@ -91,8 +91,8 @@ export default function LogoMarqueeSection() {
                 width={125}
                 height={58}
                 className="
-                  w-[6rem]
-                  md:w-[7.8125rem]
+                  w-[7.8125rem]
+                  md:w-[10.8125rem]
                   h-auto
                   object-contain
                   opacity-80

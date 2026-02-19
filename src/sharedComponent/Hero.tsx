@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { submitLead } from '@/app/actions/submit-lead'
 import { useRouter } from 'next/navigation'
+
+
 import Link from 'next/link'
 
 const assetPath = '/digital-marketing-agency';
@@ -17,7 +19,8 @@ export default function HeroSection() {
     message: ''
   })
   const router = useRouter()
-
+const [marketingSpend, setMarketingSpend] = useState("");
+const [service, setService] = useState("");
 
   // State to hold UTMs
   const [utmData, setUtmData] = useState({
@@ -286,38 +289,83 @@ export default function HeroSection() {
             <input placeholder="e.g. https://www.mycompany.com" className="w-full px-4 py-3 rounded-[8px] bg-[#0A0F1D] text-white text-[14px] outline-none" />
           </div>
 
-          <div className="flex flex-col gap-2">
-            <label className="text-[#BDCBF6] text-[14px] font-normal">Monthly Marketing Spend</label>
-            <div className="relative">
-              <select className="w-full px-4 py-3 rounded-[8px] bg-[#0A0F1D] text-[14px] text-[#52627A] outline-none appearance-none cursor-pointer" defaultValue="">
-                <option value="" disabled> 3–5 Lakhs Monthly Budget</option>
-                <option>3–5 Lakhs Monthly Budget</option>
-                <option>10–25 Lakhs Monthly Budget</option>
-                <option>20–50 Lakhs Monthly Budget</option>
-                <option>50+ Lakhs Monthly Budget</option>
-              </select>
-              <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#52627A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </div>
-            </div>
-          </div>
+        <div className="flex flex-col gap-2">
+  <label className="text-[#BDCBF6] text-[14px] font-normal">
+    Monthly Marketing Spend
+  </label>
 
-          <div className="flex flex-col gap-2">
-            <label className="text-[#BDCBF6] text-[14px] font-normal">Services</label>
-            <div className="relative">
-              <select className="w-full px-4 py-3 rounded-[8px] bg-[#0A0F1D] text-[14px] text-[#52627A] outline-none appearance-none cursor-pointer" defaultValue="">
-                <option>Performance Marketing (Ads)</option>
-                <option>Performance Marketing (Ads)</option>
-                <option>SEO</option>
-                <option>Landing Page</option>
-                <option>CRO</option>
-                <option>I need help with everything</option>
-              </select>
-              <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#52627A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </div>
-            </div>
-          </div>
+  <div className="relative">
+    <select
+  value={marketingSpend}
+  onChange={(e) => setMarketingSpend(e.target.value)}
+  className={`w-full px-4 py-3 rounded-[8px] bg-[#0A0F1D] text-[14px] outline-none appearance-none cursor-pointer ${
+    marketingSpend ? "text-white" : "text-[#52627A]"
+  }`}
+>
+  <option value="" disabled hidden>
+    3–5 Lakhs Monthly Budget
+  </option>
+
+  <option value="3-5">3–5 Lakhs Monthly Budget</option>
+  <option value="10-25">10–25 Lakhs Monthly Budget</option>
+  <option value="20-50">20–50 Lakhs Monthly Budget</option>
+  <option value="50+">50+ Lakhs Monthly Budget</option>
+</select>
+
+
+    <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path
+          d="M5 7.5L10 12.5L15 7.5"
+          stroke="#52627A"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  </div>
+</div>
+
+         <div className="flex flex-col gap-2">
+  <label className="text-[#BDCBF6] text-[14px] font-normal">
+    Services
+  </label>
+
+  <div className="relative">
+    <select
+  value={service}
+  onChange={(e) => setService(e.target.value)}
+  className={`w-full px-4 py-3 rounded-[8px] bg-[#0A0F1D] text-[14px] outline-none appearance-none cursor-pointer ${
+    service ? "text-white" : "text-[#52627A]"
+  }`}
+>
+  <option value="" disabled hidden>
+    Select Service
+  </option>
+
+  <option value="performance">Performance Marketing (Ads)</option>
+  <option value="seo">SEO</option>
+  <option value="landing">Landing Page</option>
+  <option value="cro">CRO</option>
+  <option value="all">I need help with everything</option>
+</select>
+
+
+    <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path
+          d="M5 7.5L10 12.5L15 7.5"
+          stroke="#52627A"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  </div>
+</div>
+
 
           <div className="flex flex-col gap-2">
             <label className="text-[#BDCBF6] text-[14px] font-normal">What are you trying to achieve?</label>
@@ -326,7 +374,7 @@ export default function HeroSection() {
           <button
             type="submit"
             disabled={loading}
-            className="mt-2 w-full flex justify-center items-center gap-2 px-6 py-3 rounded-[8px] bg-[#E5E5E5] text-[#1E293B] font-semibold disabled:opacity-50"
+            className="mt-2 w-full flex justify-center items-center gap-2 px-6 py-3 rounded-[8px] bg-[#E5E5E5] text-[#1E293B] font-semibold disabled:opacity-50 cursor-pointer"
           >
             {loading ? 'Submitting...' : 'Submit →'}
           </button>

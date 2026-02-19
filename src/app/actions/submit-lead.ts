@@ -49,10 +49,10 @@ export async function submitLead(formData: LeadData, utmData: UtmData) {
     await resend.emails.send({
       from: 'Leads <onboarding@resend.dev>',
       to: ['hello@shitanshudigital.com'], 
-      subject: `New Strategy Call Request: ${formData.full_name}`,
+      subject: `🚀 New Strategy Call Request: ${formData.full_name}`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; color: #333;">
-          <h1 style="color: #FF9900; font-size: 24px; margin-bottom: 24px;">🚀 New Strategy Call Request</h1>
+          <h1 style="color: #FF9900; font-size: 24px; margin-bottom: 24px;"> New Strategy Call Request</h1>
           
           <p><strong>Name:</strong> ${formData.full_name}</p>
           <p><strong>Email:</strong> <a href="mailto:${formData.email}" style="color: #007bff;">${formData.email}</a></p>

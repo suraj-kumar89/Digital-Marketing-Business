@@ -174,55 +174,78 @@ export default function HeroSection() {
         </ul>
 
         {/* CTA BUTTON */}
-        <Link href="/book-a-call">
-        <button
-          className="
-            flex
-            items-center
-            justify-center
-            gap-[10px]
-            px-8
-            py-4
-            rounded-[8px]
-            bg-[#F90]
-            text-[#331F00]
-            text-[18px]
-            md:text-[20px]
-            leading-[32px]
-            font-bold
-            tracking-[-0.2px]
-            font-ui
-            lg:mt-[-2rem]
-            w-full
-            md:w-auto
-            cursor-pointer
-          "
-        >
-          Book a Strategy Call
-        </button>
-</Link>
-        {/* PARTNER LOGOS */}
-        <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 lg:mt-[-1rem] w-full">
-          {/* Google Partner Logo */}
-          <img
-            src={`${assetPath}/partner1.svg`}
-            alt="Google Partner"
-            className="w-[120px] md:w-[152px] h-[40px] md:h-auto object-contain"
-          />
+        <Link href="/book-a-call" className="block w-full md:w-auto">
+          <button
+            className="
+      flex
+      items-center
+      justify-center
+      gap-[10px]
 
-          {/* Meta Business Partner Logo */}
-          <img
-            src={`${assetPath}/partner2.svg`}
-            alt="Meta Business Partner"
-            className="w-[120px] md:w-[152px] h-[40px] md:h-auto object-contain"
-          />
-        </div>
+      w-full md:w-auto
+      px-8
+      py-5 md:py-4   /* taller only on mobile */
+
+      rounded-[8px]
+      bg-[#F90]
+      text-[#331F00]
+      text-[18px]
+      md:text-[20px]
+      leading-[32px]
+      font-bold
+      tracking-[-0.2px]
+      font-ui
+      lg:mt-[-2rem]
+      cursor-pointer
+    "
+          >
+            Book a Strategy Call
+          </button>
+        </Link>
+
+        {/* PARTNER LOGOS */}
+       <div className="
+  flex
+  flex-nowrap
+  items-center
+  justify-center md:justify-start
+  gap-4
+  w-full
+">
+
+  {/* Google Partner Logo */}
+  <img
+    src={`${assetPath}/partner1.svg`}
+    alt="Google Partner"
+    className="
+      w-[152px] h-[59px]        /* mobile (same as now) */
+      md:w-[180px] md:h-[70px]  /* bigger desktop */
+      object-contain
+      shrink-0
+    "
+  />
+
+  {/* Meta Business Partner Logo */}
+  <img
+    src={`${assetPath}/partner2.svg`}
+    alt="Meta Business Partner"
+    className="
+      w-[152px] h-[59px]
+      md:w-[180px] md:h-[70px]
+      object-contain
+      shrink-0
+    "
+  />
+
+</div>
+
+
 
       </div>
 
       {/* RIGHT FORM CARD */}
 
-      
+
       <div
         className="
           flex
@@ -240,11 +263,11 @@ export default function HeroSection() {
           bg-[#050914]
         "
       >
-       
+
         <h3 className="self-start text-white text-[20px] md:text-[24px] leading-[30px] md:leading-[36px] font-medium font-[var(--font-jakarta)]">
           Book a Strategy Call
         </h3>
-       
+
 
         <form onSubmit={handleSubmit} className="w-full flex flex-col gap-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -267,9 +290,11 @@ export default function HeroSection() {
             <label className="text-[#BDCBF6] text-[14px] font-normal">Monthly Marketing Spend</label>
             <div className="relative">
               <select className="w-full px-4 py-3 rounded-[8px] bg-[#0A0F1D] text-[14px] text-[#52627A] outline-none appearance-none cursor-pointer" defaultValue="">
-                <option value="" disabled>e.g. 3–5 Lakhs, 5–10 Lakhs...</option>
-                <option>3–5 Lakhs</option>
-                <option>5–10 Lakhs</option>
+                <option value="" disabled>e.g. 3–5 Lakhs, 10–25 Lakhs...</option>
+                <option>3–5 Lakhs Monthly Budget</option>
+                <option>10–25 Lakhs Monthly Budget</option>
+                <option>20–50 Lakhs Monthly Budget</option>
+                <option>50+ Lakhs Monthly Budget</option>
               </select>
               <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#52627A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
@@ -281,9 +306,12 @@ export default function HeroSection() {
             <label className="text-[#BDCBF6] text-[14px] font-normal">Services</label>
             <div className="relative">
               <select className="w-full px-4 py-3 rounded-[8px] bg-[#0A0F1D] text-[14px] text-[#52627A] outline-none appearance-none cursor-pointer" defaultValue="">
-                <option>e.g. Ads, Landing Page, SEO</option>
-                <option>Ads</option>
+                <option>e.g. Landing Page, SEO</option>
+                <option>Performance Marketing (Ads)</option>
                 <option>SEO</option>
+                <option>Landing Page</option>
+                <option>CRO</option>
+                <option>I need help with everything</option>
               </select>
               <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#52627A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>

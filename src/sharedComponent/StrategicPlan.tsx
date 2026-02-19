@@ -8,7 +8,7 @@ export default function StrategicPlanSection() {
         flex-col
         lg:flex-row
         items-start
-        justify-center
+        items-center
         gap-12
         lg:gap-[4rem]
         px-6

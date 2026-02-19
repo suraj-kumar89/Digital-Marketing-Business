@@ -6,10 +6,11 @@ export default function ELearningCaseStudySection() {
   return (
     <section
       className="
-        flex
+       flex
         flex-col
         lg:flex-row
         items-start
+        items-center
         gap-12
         lg:gap-[4rem]
         px-6
@@ -17,8 +18,8 @@ export default function ELearningCaseStudySection() {
         lg:px-[7.5rem]
         py-12
         lg:py-[5rem]
-        self-stretch
         bg-[#050914]
+        self-stretch
       "
     >
       {/* ================= LEFT COLUMN ================= */}

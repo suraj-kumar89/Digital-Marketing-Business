@@ -48,45 +48,43 @@ export default function WhatWeDoSection() {
   return (
     <section
       className="
+         relative
         flex
-        flex-col
+        flex-col-reverse
         lg:flex-row
         justify-center
         items-start
         gap-12
-        lg:gap-[4rem]
+        lg:gap-[5rem]
         px-6
         md:px-12
-        lg:px-[7.5rem]
+        lg:px-[5rem]
         py-12
-        lg:py-[5rem]
-        bg-[#02050E]
-        relative
+        lg:py-[8rem]
+        bg-[#02050E] 
       "
     >
       {/* LEFT INTRO CARD */}
       <div
         className="
-          flex
+           flex
           flex-col
           items-start
           gap-6
           lg:gap-[2rem]
           w-full
-          lg:flex-[1_0_0]
-          p-8
-          lg:p-[2.5rem]
-          rounded-[1.5rem]
-          bg-[#050914]
+          lg:max-w-[30rem]
           lg:sticky
-          lg:top-[6rem]
+          top-[2rem]
+          lg:top-[8rem]
           h-fit
-          self-start
-          /* Ensure header stays above stacking cards on mobile if needed */
           z-10
+          bg-[#02050E]
+          pb-4
+          lg:pb-0
         "
       >
-        <h2 className="text-white text-[2.5rem] md:text-[3rem] leading-[3rem] md:leading-[4rem] font-semibold font-[var(--font-jakarta)]">
+        <h2 className="text-white text-[2.5rem] md:text-[3.5rem] leading-tight font-semibold">
           What <span className="text-[#F90]">We Do</span>
         </h2>
 
@@ -129,7 +127,7 @@ export default function WhatWeDoSection() {
             className="sticky top-[4rem] lg:top-[6rem]"
             style={{
               // Successive cards get higher z-index to stack on top of previous ones
-              zIndex: i + 20,
+              zIndex: i ,
               // Margin bottom ensures the next card has space to scroll up before stacking
               marginBottom: i === SERVICES.length - 1 ? '0' : '4rem'
             }}

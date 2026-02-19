@@ -290,7 +290,7 @@ export default function HeroSection() {
             <label className="text-[#BDCBF6] text-[14px] font-normal">Monthly Marketing Spend</label>
             <div className="relative">
               <select className="w-full px-4 py-3 rounded-[8px] bg-[#0A0F1D] text-[14px] text-[#52627A] outline-none appearance-none cursor-pointer" defaultValue="">
-                <option value="" disabled>e.g. 3–5 Lakhs, 10–25 Lakhs...</option>
+                <option value="" disabled> 3–5 Lakhs Monthly Budget</option>
                 <option>3–5 Lakhs Monthly Budget</option>
                 <option>10–25 Lakhs Monthly Budget</option>
                 <option>20–50 Lakhs Monthly Budget</option>
@@ -306,7 +306,7 @@ export default function HeroSection() {
             <label className="text-[#BDCBF6] text-[14px] font-normal">Services</label>
             <div className="relative">
               <select className="w-full px-4 py-3 rounded-[8px] bg-[#0A0F1D] text-[14px] text-[#52627A] outline-none appearance-none cursor-pointer" defaultValue="">
-                <option>e.g. Landing Page, SEO</option>
+                <option>Performance Marketing (Ads)</option>
                 <option>Performance Marketing (Ads)</option>
                 <option>SEO</option>
                 <option>Landing Page</option>
